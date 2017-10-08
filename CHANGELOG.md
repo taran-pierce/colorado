@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Light Box for full res photos
 
+## [1.3.1] - 2017-10-08
+### Added
+- Cleaned up scss for the photo gallery
+- Also fixed a few typos
+- Set up index page for /park to view photo galleries
+
 ## [1.2.1] - 2017-10-08
 ### Added
 - Setting up the photo gallery

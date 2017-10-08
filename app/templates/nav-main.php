@@ -28,6 +28,9 @@
               <li>
                 <a href="/parks/lumpy-ridge-trailhead.php">Lumpy Ridge Trailhead</a>
               </li>
+              <li>
+                <a href="/parks">All Parks</a>
+              </li>
             </ul>
           </li>
         </ul>
