@@ -11,13 +11,20 @@ This of course can be modified, but the gulpfile.js will need to be updated as w
 
 ```
   /project
+  |-package.json
   |
   |-app
+  |  |-package.json
   |  |-scss
   |  |-js
   |  |-css
   |  |-images
+  |  |  |
+  |  |  |-parks/
+  |  |  
   |  |-fonts
+  |  |-parks/
+  |  |-templates/
   |
   |-dist
   |  |-css
@@ -25,3 +32,6 @@ This of course can be modified, but the gulpfile.js will need to be updated as w
   |  |-fonts
   |  |-images
 ```
+
+## Gulp Commands
+Run `gulp` to compile everything and start up browersync

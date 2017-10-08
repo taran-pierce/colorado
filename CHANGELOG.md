@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Light Box for full res photos
 
+## [1.4.3] - 2017-10-08
+### Updated 
+- README.md file 
+
 ## [1.4.2] - 2017-10-08
 ### Added
 - Favico
