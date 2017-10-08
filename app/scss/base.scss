@@ -1,0 +1,155 @@
+// import our custom BS variables file
+@import 'variables';
+
+// import main bs router file to get all bs css
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+// import owl.carousel scss 
+@import '../node_modules/owl.carousel/src/scss/owl.carousel';
+@import '../node_modules/owl.carousel/src/scss/owl.theme.default';
+
+body {
+  background-image: url($image-base + 'skulls.png');
+  background-repeat: repeat;
+  background-position: top left;
+}
+
+// Navigation
+.navbar-default {
+  background-image: url($image-base + 'grey-wash-wall.png');
+  box-shadow: 0 1px 3px rgba(0,0,0,.4);
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+
+  .dropdown-menu {
+    background: url($image-base + 'grey-wash-wall.png');
+    border: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    > li {
+      background: rgba(0,0,0,.3);
+
+
+      > a {
+        color: $white;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        padding: 5px 15px;
+
+        &:hover {
+          background: rgba(0,0,0,.1);
+          border-top: 1px solid rgba(0,0,0,.3);
+          border-bottom: 1px solid rgba(0,0,0,.3);
+        }
+      }
+    }
+  }
+}
+
+.secondary {
+  background-color: rgba(221, 216, 206, .7);
+  border-top: rgb(221, 216, 206);
+  border-bottom: rgb(221, 216, 206);
+}
+
+// Base overrides //
+.container {
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    margin-top: 10px;
+  }
+}
+
+// Footer
+.sticky {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  &.bottom {
+    bottom: 0;
+  }
+  &.top {
+    top: 0;
+  }
+}
+
+// TODO put in partial
+.card {
+  background: rgba(255,255,255,.4);
+  border: 1px solid rgba(0,0,0,.2);
+  border-top: 0;
+
+
+  h2 {
+    background: rgba(0,0,0,.6);
+    color: $white;
+    font-weight: 200;
+    padding: 10px;
+  }
+  .card-container {
+    padding: 10px;
+  }
+}
+@media(min-width: 1200px) {
+  .card {
+    &.big-t {
+      .btn-primary {
+        margin-top: 18px;
+      }
+    }
+  }
+}
+
+.co_blue {
+  color: $co_blue;
+}
+
+.co_white {
+  color: $white;
+}
+
+.co_red {
+  color: $co_red;
+}
+
+// TODO put in a partial
+.carousel-container {
+  border: 1px solid rgba(0,0,0,.2);
+  background: url($image-base + 'fresh-snow.png');
+  padding: 15px;
+  padding-bottom: 0;
+
+  img {
+    border: 1px solid rgba(0,0,0,.2);
+  }
+  .owl-theme .owl-nav.disabled {
+    + .owl-dots {
+      background: rgba(0,0,0,.4);
+      border-top: 1px solid rgba(0,0,0,.1);
+      height: 22px;
+      margin-top: 15px;
+      margin-left: -15px;
+      margin-right: -15px;
+
+      .owl-dot {
+        &:hover {
+          span {
+            background: $co_yellow;
+          }
+        }
+        &.active {
+          span {
+            background: $co_blue;
+          }
+        }
+      }
+    }
+  }
+}
