@@ -1,6 +1,6 @@
 {
   "name": "colorado",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Site to share photos of Colorado adventures.",
   "main": "app/index.php",
   "scripts": {

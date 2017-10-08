@@ -10,7 +10,7 @@
   <div class="container">
     <h1>Colorado Adventures</h1>
     <p>Just wanted a way to chronicle and show off some of our adventures in Colorado. It's so beautiful here and we like to take photos so we wanted a way that we could easily show them off to people.</p>
-    <p>This seemed like th easiest way.</p>
+    <p>This seemed like the easiest way.</p>
   </div>
 </section>
 <section>

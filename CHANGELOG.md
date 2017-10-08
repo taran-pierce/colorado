@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Light Box for full res photos
 
+## [1.4.2] - 2017-10-08
+### Added
+- Favico
+
+### Updated 
+- Updated /app package.json
+- Corrected page title
+
 ## [1.4.1] - 2017-10-08
 ### Added
 - South Shore Parkway 
