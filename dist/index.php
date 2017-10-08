@@ -16,7 +16,7 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-6 col-lg-4">
         <div class="card">
           <h2>Lumpy Ridge Trailhead</h2>
           <div class="card-container">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-6 col-lg-4">
         <div class="card">
           <h2>Estes Park</h2>
           <div class="card-container">
@@ -34,8 +34,8 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card">
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+        <div class="card big-t">
           <h2>Big Thompson River</h2>
           <div class="card-container">
             <p>The Big Thompson River is a tributary of the South Platte River, approximately 78 miles long &mdash; give or take &mdash;, in the U.S. state of Colorado.</p>

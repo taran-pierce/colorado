@@ -20,9 +20,6 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Parks <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li>
-                <a href="/parks">All Parks</a>
-              </li>
-              <li>
                 <a href="/parks/estes-park.php">Estes Park</a>
               </li>
               <li>
