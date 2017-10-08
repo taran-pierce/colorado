@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Light Box for full res photos
 
+## [1.4.1] - 2017-10-08
+### Added
+- South Shore Parkway 
+- Smooth Scroll anchore links
+
+### Updated
+- Navigation
+- Adde comments to JS
+- Actually got changelog in sync with package.json
+
 ## [1.3.1] - 2017-10-08
 ### Added
 - Cleaned up scss for the photo gallery

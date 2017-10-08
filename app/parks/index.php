@@ -10,13 +10,20 @@
   <div class="container">
     <h1>Parks we have visited</h1>
     <p>Here is a list of parks we have visited. Each one has photos to go with it.</p>
+    <p>One's that I have actually remembered to take photos of.</p>
+    <ul class="list-unstyled" data-smooth-scroll="true">
+      <li><a href="#estes-park">Estes Park</a></li>
+      <li><a href="#lumpy-ridge">Lumpy Ridge Trailhead</a></li>
+      <li><a href="#big-thompson">Big Thompson River</a></li>
+      <li><a href="#south-shore">South Shore Parkway</a></li>
+    </ul>
   </div>
 </section>
 <section>
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="card">
+        <div id="estes-park" class="card">
           <h2>Estes Park</h2>
           <div class="card-container">
             <p>Estes Park is a town in northern Colorado. It’s known as a base for the Rocky Mountain National Park, home to wildlife including elk and bears, plus miles of trails. The park’s Trail Ridge Road winds past craggy peaks, forests and tundra. Nearby are the wilderness areas of Roosevelt National Forest. The Estes Park Aerial Tramway connects the town to the summit of Prospect Mountain for views over the valley.</p>
@@ -52,7 +59,7 @@
         </div>
       </div>
       <div class="col-xs-12">
-        <div class="card">
+        <div id="lumpy-ridge" class="card">
           <h2>Lumpy Ridge Trailhead</h2>
           <div class="card-container">
             <p>Prior to 2007 there were two trailheads that hikers used to access trails in the Lumpy Ridge Area. However, in May of 2007, both the Gem Lake and Twin Owls Trailheads were relocated, and then combined into the Lumpy Ridge Trailhead. To reach the new trailhead from the intersection of Wonderview Avenue (34 Bypass Road) and MacGregor Avenue, turn to travel northbound on MacGregor Avenue. The Lumpy Ridge Trailhead will be on your left after driving 1.2 miles. You may want to note that MacGregor Avenue makes a sharp right turn, at which point it turns into Devils Gulch Road, just before reaching the trailhead access road.</p>
@@ -106,7 +113,7 @@
         </div>
       </div>
       <div class="col-xs-12">
-        <div class="card">
+        <div id="big-thompson" class="card">
           <h2>Big Thompson River</h2>
           <div class="card-container">
             <p>The headwaters of the Big Thompson River begin in Forest Canyon within Rocky Mountain National Park in Larimer County, Colorado. The river flows east through Moraine Park to the town of Estes Park. There it is held in Lake Estes by Olympus Dam before being released into the Big Thompson Canyon. The North Fork Big Thompson River also begins in Rocky Mountain National Park, on the northern slopes of the Mummy Range. This tributary flows east, through the town of Glen Haven, where it merges with the Big Thompson River in the town of Drake, in the Big Thompson Canyon.</p>
@@ -153,16 +160,70 @@
           </div>
         </div>
       </div>
+      <div class="col-xs-12">
+        <div id="south-shore" class="card">
+          <h2>South Shore Parkway</h2>
+          <div class="card-container">
+            <p>Located along the south shore of Lake Loveland on US Highway 34.  Parking is located along the south shore of the lake, and easy access is provided to the Recreation Trail as it goes along the lake shore.  There are numerous benches to rest on, and many beautiful sculptures to enjoy!</p>
+            <p><strong>Elevation:</strong> 4,982'</p>
+            <div class="gallery hidden-xs">
+              <div id="south-shore-carousel" class="owl-carousel owl-theme">
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1934.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1935.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1939.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1940.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1941.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1942.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1943.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1944.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1945.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1946.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1947.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1948.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1949.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1951.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1952.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1955.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1956.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1957.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1959.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1961.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1967.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1968.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1969.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1970.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1971.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1972.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1973.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1974.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1975.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1976.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1977.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1978.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1980.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1981.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1982.jpg" alt="South Shore Parkway" />
+                <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/thumbs/IMG_1983.jpg" alt="South Shore Parkway" />
+              </div>
+            </div>
+            <a href="/parks/south-shore.php" class="btn btn-lg btn-primary btn-block">View Larger Photos</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // grab the carousels
     var $estesCarousel = $('#estes-carousel');
     var $lumpyRidgeCarousel = $('#lumpy-ridge-carousel');
     var $bigThompsonCarousel = $('#big-thompson-carousel');
-    var options = {};
+    var $southShoreCarousel = $('#south-shore-carousel');
 
+    // set the options
+    // they share the same options on this page
+    var options = {};
     options = {
       items: 4,
       lazyLoad: true,
@@ -173,9 +234,11 @@
       autoplayHoverPause: true
     }
 
+    // initiate the carousels
     initCarousel($estesCarousel, options);
     initCarousel($lumpyRidgeCarousel, options);
     initCarousel($bigThompsonCarousel, options);
+    initCarousel($southShoreCarousel, options);
   });
 </script>
 <?php include( ROOT . 'templates/bottom.php' ); ?>
