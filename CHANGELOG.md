@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Light Box for full res photos
 - Craft Beer section
 
+## [1.6.3] - 2017-10-08
+### Updated 
+- Updated the README.md file 
+
 ## [1.5.3] - 2017-10-08
 ### Added
 - Start of craft beer section 
