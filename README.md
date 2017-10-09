@@ -35,4 +35,4 @@ This of course can be modified, but the gulpfile.js will need to be updated as w
 
 ## Gulp Commands
 1. Run `gulp` to compile everything and start up browersync
-2. Run `gulp deply` to build the production ready assets
+2. Run `gulp deploy` to build the production ready assets
