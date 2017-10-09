@@ -24,7 +24,7 @@
     <div class="row">
       <div class="col-xs-12">
         <div id="estes-park" class="card">
-          <h2>Estes Park</h2>
+          <h3>Estes Park</h3>
           <div class="card-container">
             <p>Estes Park is a town in northern Colorado. It’s known as a base for the Rocky Mountain National Park, home to wildlife including elk and bears, plus miles of trails. The park’s Trail Ridge Road winds past craggy peaks, forests and tundra. Nearby are the wilderness areas of Roosevelt National Forest. The Estes Park Aerial Tramway connects the town to the summit of Prospect Mountain for views over the valley.</p>
             <p><strong>Elevation:</strong> 7,522'</p>
@@ -60,7 +60,7 @@
       </div>
       <div class="col-xs-12">
         <div id="lumpy-ridge" class="card">
-          <h2>Lumpy Ridge Trailhead</h2>
+          <h3>Lumpy Ridge Trailhead</h3>
           <div class="card-container">
             <p>Prior to 2007 there were two trailheads that hikers used to access trails in the Lumpy Ridge Area. However, in May of 2007, both the Gem Lake and Twin Owls Trailheads were relocated, and then combined into the Lumpy Ridge Trailhead. To reach the new trailhead from the intersection of Wonderview Avenue (34 Bypass Road) and MacGregor Avenue, turn to travel northbound on MacGregor Avenue. The Lumpy Ridge Trailhead will be on your left after driving 1.2 miles. You may want to note that MacGregor Avenue makes a sharp right turn, at which point it turns into Devils Gulch Road, just before reaching the trailhead access road.</p>
             <p><strong>Elevation:</strong> 	7870'</p>
@@ -114,7 +114,7 @@
       </div>
       <div class="col-xs-12">
         <div id="big-thompson" class="card">
-          <h2>Big Thompson River</h2>
+          <h3>Big Thompson River</h3>
           <div class="card-container">
             <p>The headwaters of the Big Thompson River begin in Forest Canyon within Rocky Mountain National Park in Larimer County, Colorado. The river flows east through Moraine Park to the town of Estes Park. There it is held in Lake Estes by Olympus Dam before being released into the Big Thompson Canyon. The North Fork Big Thompson River also begins in Rocky Mountain National Park, on the northern slopes of the Mummy Range. This tributary flows east, through the town of Glen Haven, where it merges with the Big Thompson River in the town of Drake, in the Big Thompson Canyon.</p>
             <p><strong>Elevation:</strong> 11,310'</p>
@@ -162,7 +162,7 @@
       </div>
       <div class="col-xs-12">
         <div id="south-shore" class="card">
-          <h2>South Shore Parkway</h2>
+          <h3>South Shore Parkway</h3>
           <div class="card-container">
             <p>Located along the south shore of Lake Loveland on US Highway 34.  Parking is located along the south shore of the lake, and easy access is provided to the Recreation Trail as it goes along the lake shore.  There are numerous benches to rest on, and many beautiful sculptures to enjoy!</p>
             <p><strong>Elevation:</strong> 4,982'</p>

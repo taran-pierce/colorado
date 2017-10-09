@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 - Light Box for full res photos
+- Craft Beer section
+
+## [1.5.3] - 2017-10-08
+### Added
+- Start of craft beer section 
+
+### Updated 
+- Fixed deploy task
+- Improved gulp dev tasks
 
 ## [1.4.3] - 2017-10-08
 ### Updated 

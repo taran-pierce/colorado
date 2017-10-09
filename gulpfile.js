@@ -18,17 +18,25 @@ var runSequence = require('run-sequence');
 //    .pipe(gulp.dest('destination')) // Outputs the file in the destination folder
 //})
 
-// compile sass to css
+// compile sass to css for deving
 gulp.task('sass', function() {
   return gulp.src('app/scss/**/*.scss')
     .pipe(sass())
-    .pipe(cssnano())
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
     }))
 });
 
+// compile sass to css for production 
+gulp.task('sass-production', function() {
+  return gulp.src('app/scss/**/*.scss')
+    .pipe(sass())
+    .pipe(cssnano())
+    .pipe(gulp.dest('dist/css'))
+});
+
+// set up php server
 gulp.task('php', function() {
   php.server({
     base: 'app',
@@ -58,9 +66,6 @@ gulp.task('useref', function() {
     .pipe(gulpIf('*.js', uglify()))
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
 });
 
 // optimze images
@@ -72,13 +77,6 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/images'))
 });
 
-// move fonts
-gulp.task('fonts', function() {
-  return gulp.src('app/fonts/**/*')
-    .pipe(gulp.dest('dist/fonts'))
-})
-
-
 // clean dist directory
 gulp.task('clean:dist', function() {
   return del.sync('dist');
@@ -87,7 +85,15 @@ gulp.task('clean:dist', function() {
 // build project
 gulp.task('build', function(callback) {
   runSequence('clean:dist',
-    ['sass', 'useref', 'images', 'fonts'],
+    ['sass', 'useref', 'images'],
+    callback
+  )
+});
+
+// deploy
+gulp.task('deploy', function(callback) {
+  runSequence('clean:dist',
+    ['sass-production', 'useref', 'images'],
     callback
   )
 });
