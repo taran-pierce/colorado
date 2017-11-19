@@ -10,6 +10,17 @@
 <section>
   <div class="container thumbnail-gallery">
     <h1>South Shore Thumbs</h1>
+    <ul class="nav nav-tabs">
+      <li>
+        <a href="/parks/index.php">Home</a>
+      </li>
+      <li class="active">
+        <a href="/parks/south-shore-thumbs.php">Thumbs</a>
+      </li>
+      <li>
+        <a href="/parks/south-shore.php">Carousel</a>
+      </li>
+    </ul>
     <div class="row">
       <?php
         # build thumbnail gallery

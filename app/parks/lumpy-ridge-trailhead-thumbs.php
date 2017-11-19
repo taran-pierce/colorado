@@ -10,6 +10,17 @@
 <section>
   <div class="container thumbnail-gallery">
     <h1>Lumpy Ridge Trailhead Thumbs</h1>
+    <ul class="nav nav-tabs">
+      <li>
+        <a href="/parks/index.php">Home</a>
+      </li>
+      <li class="active">
+        <a href="/parks/lumpy-ridge-trailhead-thumbs.php">Thumbs</a>
+      </li>
+      <li>
+        <a href="/parks/lumpy-ridge-trailhead.php">Carousel</a>
+      </li>
+    </ul>
     <div class="row">
       <?php
         # build thumbnail gallery

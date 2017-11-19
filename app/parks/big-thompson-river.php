@@ -9,6 +9,17 @@
 <section>
   <div class="container">
     <h1 class="carousel-title">Big Thompson River</h1>
+    <ul class="nav nav-tabs">
+      <li>
+        <a href="/parks/index.php">Home</a>
+      </li>
+      <li>
+        <a href="/parks/big-thompson-river-thumbs.php">Thumbs</a>
+      </li>
+      <li class="active">
+        <a href="/parks/big-thompson-river.php">Carousel</a>
+      </li>
+    </ul>
     <div class="carousel-container">
       <div class="owl-carousel owl-theme" id="photo-carousel">
         <img class="owl-lazy img-responsive" data-src="/images/parks/big-thompson-river/IMG_2206.jpg" alt="Big Thompson River" />
