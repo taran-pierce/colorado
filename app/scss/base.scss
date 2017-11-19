@@ -8,6 +8,9 @@
 @import '../node_modules/owl.carousel/src/scss/owl.carousel';
 @import '../node_modules/owl.carousel/src/scss/owl.theme.default';
 
+// import lightbox css
+@import '../node_modules/lightbox2/src/css/lightbox';
+
 body {
   background-image: url($image-base + 'skulls.png');
   background-repeat: repeat;

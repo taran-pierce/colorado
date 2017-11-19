@@ -9,6 +9,17 @@
 <section>
   <div class="container">
     <h1 class="">South Shore Parkway</h1>
+    <ul class="nav nav-tabs">
+      <li>
+        <a href="/parks/index.php">Home</a>
+      </li>
+      <li>
+        <a href="/parks/south-shore-thumbs.php">Thumbs</a>
+      </li>
+      <li class="active">
+        <a href="/parks/south-shore.php">Carousel</a>
+      </li>
+    </ul>
     <div class="carousel-container">
       <div class="owl-carousel owl-theme" id="photo-carousel">
         <img class="owl-lazy img-responsive" data-src="/images/parks/south-shore/IMG_1934.jpg" alt="South Shore Parkway" />

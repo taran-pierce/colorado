@@ -9,6 +9,17 @@
 <section>
   <div class="container">
     <h1 class="">Lumpy Ridge Trailhead</h1>
+    <ul class="nav nav-tabs">
+      <li>
+        <a href="/parks/index.php">Home</a>
+      </li>
+      <li>
+        <a href="/parks/lumpy-ridge-trailhead-thumbs.php">Thumbs</a>
+      </li>
+      <li class="active">
+        <a href="/parks/lumpy-ridge-trailhead.php">Carousel</a>
+      </li>
+    </ul>
     <div class="carousel-container">
       <div class="owl-carousel owl-theme" id="photo-carousel">
         <img class="owl-lazy img-responsive" data-src="/images/parks/lumpy-ridge-trailhead/lumpy-ridge-1.jpg" alt="Lumpy Ridge Trailhead" />

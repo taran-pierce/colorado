@@ -9,18 +9,27 @@
 <section>
   <div class="container">
     <h1>Parks we have visited</h1>
-    <p>Here is a list of parks we have visited. Each one has photos to go with it.</p>
-    <p>One's that I have actually remembered to take photos of.</p>
-    <ul class="list-unstyled" data-smooth-scroll="true">
-      <li><a href="#estes-park">Estes Park</a></li>
-      <li><a href="#lumpy-ridge">Lumpy Ridge Trailhead</a></li>
-      <li><a href="#big-thompson">Big Thompson River</a></li>
-      <li><a href="#south-shore">South Shore Parkway</a></li>
-    </ul>
   </div>
 </section>
 <section>
   <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="/parks/index.php">Home</a>
+      </li>
+      <li>
+        <a href="/parks/lumpy-ridge-trailhead.php">Lumpy Ridge</a>
+      </li>
+      <li>
+        <a href="/parks/estes-park.php">Estes Park</a>
+      </li>
+      <li>
+        <a href="/parks/south-shore.php">South Shore</a>
+      </li>
+      <li>
+        <a href="/parks/big-thompson-river.php">Big Thompson River</a>
+      </li>
+    </ul>
     <div class="row">
       <div class="col-xs-12">
         <div id="estes-park" class="card">

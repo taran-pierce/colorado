@@ -56,8 +56,7 @@
 </section>
 <?php 
   # push extra separate JS files
-  # lightbox JS
-  array_push($js, '../node_modules/lightbox2/src/js/lightbox.js' );
+  #array_push($js, '../node_modules/lightbox2/src/js/lightbox.js' );
 
   include( ROOT . 'templates/bottom.php' );
 ?>
