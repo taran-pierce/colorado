@@ -1,6 +1,5 @@
     <?php 
-      # I have nothing to put in there yet
-      #include 'footer.php' 
+      include 'footer.php' 
     ?>
     <!-- build:js /js/bootstrap-bundle.js -->
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script> 
