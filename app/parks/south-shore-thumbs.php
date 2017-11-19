@@ -6,7 +6,6 @@
 
   include( ROOT . 'templates/top.php' );
 ?>
-<link href="/node_modules/lightbox2/src/css/lightbox.css" rel="stylesheet">
 <section>
   <div class="container thumbnail-gallery">
     <h1>South Shore Thumbs</h1>
