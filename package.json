@@ -1,10 +1,11 @@
 {
   "name": "colorado",
-  "version": "1.6.4",
-  "description": "Site to share photos of Colorado adventures.",
+  "version": "1.6.5",
+  "description": "Site to share photos of Colorado adventures",
   "main": "app/index.php",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp",
+    "prod": "NODE_ENV=production gulp build"
   },
   "repository": {
     "type": "git",
