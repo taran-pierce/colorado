@@ -6,130 +6,47 @@
 
   include( ROOT . 'templates/top.php' );
 ?>
+<link href="/node_modules/lightbox2/src/css/lightbox.css" rel="stylesheet">
 <section>
   <div class="container thumbnail-gallery">
     <h1>Lumpy Ridge Trailhead Thumbs</h1>
     <div class="row">
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-1.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-2.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-3.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-4.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-5.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-6.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-7.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-8.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-9.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-10.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-11.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-12.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-13.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-14.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-15.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-16.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-17.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-18.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-19.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-20.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-21.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-22.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-23.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-24.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-25.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-26.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-27.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-28.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-29.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-30.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-31.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-32.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-33.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-34.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-35.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-36.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-37.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-38.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-39.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
-      <div class="col-xs-6 col-sm-3">
-        <img class="img-responsive" src="/images/parks/lumpy-ridge-trailhead/thumbs/lumpy-ridge-40.jpg" alt="Lumpy Ridge Trailhead" />
-      </div>
+      <?php
+        # build thumbnail gallery
+        $column = '<div class="col-xs-6 col-sm-3">';
+        $div_end = '</div>';
+        $image_json = file_get_contents( "data/image-gallery-lumpy-ridge.json" );
+        $json = json_decode( $image_json );
+     
+        foreach ( $json as $value ) {
+          # create vars
+          $image_file_name = $value->file_name;
+          $image_file_path = $value->file_path;
+          $file_path = $image_file_path . $image_file_name;
+          $image_lightbox = $value->lightbox;
+          $image_title = $value->title;
+          $image_thumb = $value->thumbnail;
+          $thumb_file_path = $image_thumb . $image_file_name;
+
+          # create lightbox anchor tag
+          $lightbox_anchor ='<a href="' . $file_path . '" data-lightbox="' . $image_lightbox . '" data-title="' . $image_title . '">'; 
+
+          # create thumbnail
+          $thumbnail = '<img class="img-responsive" src="' . $thumb_file_path . '" alt="' . $image_title . '" />';
+
+          print_r( $column );
+            print_r( $lightbox_anchor );
+              print_r( $thumbnail );
+            print_r( '</a>' );
+          print_r( $div_end );
+        }
+      ?>
   </div>
 </section>
-<?php include( ROOT . 'templates/bottom.php' ); ?>
+<?php 
+  # push extra separate JS files
+  # lightbox JS
+  array_push($js, '../node_modules/lightbox2/src/js/lightbox.js' );
+
+  include( ROOT . 'templates/bottom.php' );
+?>
