@@ -89,7 +89,7 @@ gulp.task('images', function() {
 
 // move needed files like favicon
 gulp.task( 'move-assets', function() {
-  return gulp.src( 'app/*.+(ico)' )
+  return gulp.src( 'app/**/*.+(ico|json)' )
     .pipe( gulp.dest( 'dist' ) );
 });
 
