@@ -1,5 +1,6 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
+var sourcemaps   = require('gulp-sourcemaps');
 var php          = require('gulp-connect-php');
 var browserSync  = require('browser-sync').create();
 var useref       = require('gulp-useref');
@@ -9,35 +10,35 @@ var cssnano      = require('gulp-cssnano');
 var imagemin     = require('gulp-imagemin');
 var cache        = require('gulp-cache');
 var del          = require('del');
-var runSequence = require('run-sequence');
+var runSequence  = require('run-sequence');
 
-// generic example
-//gulp.task('task-name', function () {
-//  return gulp.src('source-files') // Get source files with gulp.src
-//    .pipe(aGulpPlugin()) // Sends it through a gulp plugin
-//    .pipe(gulp.dest('destination')) // Outputs the file in the destination folder
-//})
+// production vars
+var production = false;
 
-// compile sass to css for deving
-gulp.task('sass', function() {
-  return gulp.src('app/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('app/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
+// NODE_ENV=production gulp from command line triggers production build
+if ( process.env.NODE_ENV == 'production' ) {
+  production = true;
+}
+
+// compile sass
+// production flag will trigger compression
+gulp.task( 'sass', function() {
+  return gulp.src( 'app/scss/**/*.scss' )
+    .pipe( gulpIf( !production, sourcemaps.init() ) )
+    .pipe( sass({
+        outputStyle: ( production ? 'compressed' : 'expanded' )
+      })
+    )
+    .pipe( gulpIf( !production, sourcemaps.write() ) )
+    .pipe( gulp.dest( production ? 'dist/css' : 'app/css' ) )
+    .pipe( gulpIf( !production, browserSync.reload({
+        stream: true
+      }) )
+    );
 });
 
-// compile sass to css for production 
-gulp.task('sass-production', function() {
-  return gulp.src('app/scss/**/*.scss')
-    .pipe(sass())
-    .pipe(cssnano())
-    .pipe(gulp.dest('dist/css'))
-});
-
-// set up php server
-gulp.task('php', function() {
+// set up php server for deving
+gulp.task( 'php', function() {
   php.server({
     base: 'app',
     port: 8011,
@@ -46,56 +47,63 @@ gulp.task('php', function() {
 });
 
 // watch app and run different tasks
-gulp.task('watch', ['browserSync', 'sass'], function() {
-  gulp.watch('app/scss/**/*.scss', ['sass']);
-  gulp.watch('app/**/*.php', browserSync.reload);
-  gulp.watch('app/js/**/*.js', browserSync.reload);
+gulp.task( 'watch', ['browserSync', 'sass'], function() {
+  gulp.watch( 'app/scss/**/*.scss', ['sass'] );
+  gulp.watch( 'app/**/*.php', browserSync.reload );
+  gulp.watch( 'app/js/**/*.js', browserSync.reload );
 });
 
-// live reload
-gulp.task('browserSync', ['php'], function() {
+// hook browserySync up to local php server 
+gulp.task( 'browserSync', ['php'], function() {
   browserSync.init({
     proxy: 'http://127.0.0.1:8011/'
-  })
+  });
 });
 
 // concat files and ugilfy them
-gulp.task('useref', function() {
-  return gulp.src('app/**/*.php')
-    .pipe(useref())
-    .pipe(gulpIf('*.js', uglify()))
-    .pipe(gulpIf('*.css', cssnano()))
-    .pipe(gulp.dest('dist'))
+gulp.task( 'useref', function() {
+  return gulp.src( 'app/**/*.php' )
+    .pipe( useref() )
+    .pipe( gulpIf( '*.js', uglify() ) )
+    .pipe( gulpIf( '*.css', cssnano() ) )
+    .pipe( gulp.dest( 'dist' ) );
 });
 
-// optimze images
+// optimze and move images
 gulp.task('images', function() {
-  return gulp.src('app/images/**/*.+(png|jpg|jpg|gif|svg)')
-    .pipe(cache(imagemin({
-      interlaced: true
-    })))
-    .pipe(gulp.dest('dist/images'))
+  return gulp.src( 'app/images/**/*.+(png|jpg|jpg|gif|svg)')
+    .pipe( cache( imagemin([
+        imagemin.gifsicle({ interlaced: true }),
+        imagemin.jpegtran({ progressive: true }),
+        imagemin.optipng({ optimizationLevel: 5 }),
+        imagemin.svgo({
+          plugins: [
+            { removeViewBox: true },
+            { cleanupIDs: false }
+          ]
+        })
+      ]) )
+    )
+    .pipe( gulp.dest( 'dist/images') );
+});
+
+// move needed files like favicon
+gulp.task( 'move-assets', function() {
+  return gulp.src( 'app/*.+(ico)' )
+    .pipe( gulp.dest( 'dist' ) );
 });
 
 // clean dist directory
-gulp.task('clean:dist', function() {
-  return del.sync('dist');
+gulp.task( 'clean:dist', function() {
+  return del.sync( 'dist' );
 });
 
 // build project
-gulp.task('build', function(callback) {
-  runSequence('clean:dist',
-    ['sass', 'useref', 'images'],
+gulp.task( 'build', function(callback) {
+  return runSequence( 'clean:dist',
+    ['sass', 'move-assets', 'useref', 'images'],
     callback
-  )
-});
-
-// deploy
-gulp.task('deploy', function(callback) {
-  runSequence('clean:dist',
-    ['sass-production', 'useref', 'images'],
-    callback
-  )
+  );
 });
 
 // default task for easy start

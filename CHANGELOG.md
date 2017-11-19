@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Light Box for full res photos
 - Craft Beer section
 
+## [1.6.5] - 2017-10-08
+### Updated 
+- Fixed how useref was linking in the assets
+- Updated gulpfile
+-- production tasks created
+-- images optimized
+-- css compressed
+-- sourcemaps integrated
+-- move favicon on build for production
+ 
+
 ## [1.6.4] - 2017-10-08
 ### Updated 
 - Fixed typo 

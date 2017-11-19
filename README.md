@@ -10,7 +10,7 @@ You also need to cd into `/app` and do a `npm install` there to get the final de
 This of course can be modified, but the gulpfile.js will need to be updated as well if you do so that all assets get placed in the location you are expecting.
 
 ```
-  /project
+  /colorado
   |-package.json
   |
   |-app
