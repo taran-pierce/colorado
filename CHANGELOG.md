@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 - Light Box for full res photos
 - Craft Beer section
+- Thumbnail gallery
 
 ## [1.6.5] - 2017-10-08
 ### Updated 
@@ -17,6 +18,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 -- css compressed
 -- sourcemaps integrated
 -- move favicon on build for production
+
+### Added
+- Lightbox functionality
+- Thumbnail gallery for Lumpy Ridge
  
 
 ## [1.6.4] - 2017-10-08
