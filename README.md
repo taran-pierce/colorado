@@ -36,3 +36,7 @@ This of course can be modified, but the gulpfile.js will need to be updated as w
 ## Gulp Commands
 1. Run `gulp` to compile everything and start up browersync
 2. Run `gulp deploy` to build the production ready assets
+
+## NPM tasks
+1. Run `npm run dev` to get the project running in dev mode with browserSync
+2. Run `npm run prod` to build all the assets for production

@@ -9,7 +9,7 @@
 <section>
   <div class="container thumbnail-gallery">
     <h1>Estes Park Thumbs</h1>
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs gallery-nav">
       <li>
         <a href="/parks/index.php">Home</a>
       </li>
@@ -20,7 +20,8 @@
         <a href="/parks/estes-park.php">Carousel</a>
       </li>
     </ul>
-    <div class="row">
+    <div class="gallery-container">
+      <div class="row">
       <?php
         # build thumbnail gallery
         $column = '<div class="col-xs-6 col-sm-3">';
@@ -51,6 +52,7 @@
           print_r( $div_end );
         }
       ?>
+      </div>
   </div>
 </section>
 <?php 

@@ -9,7 +9,7 @@
 <section>
   <div class="container">
     <h1 class="carousel-title">Estes Park</h1>
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs gallery-nav">
       <li>
         <a href="/parks/index.php">Home</a>
       </li>

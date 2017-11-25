@@ -9,7 +9,7 @@
 <section>
   <div class="container thumbnail-gallery">
     <h1>Lumpy Ridge Trailhead Thumbs</h1>
-    <ul class="nav nav-tabs">
+    <ul class="nav nav-tabs gallery-nav">
       <li>
         <a href="/parks/index.php">Home</a>
       </li>
@@ -20,8 +20,9 @@
         <a href="/parks/lumpy-ridge-trailhead.php">Carousel</a>
       </li>
     </ul>
-    <div class="row">
-      <?php
+    <div class="gallery-container">
+      <div class="row">
+        <?php
         # build thumbnail gallery
         $column = '<div class="col-xs-6 col-sm-3">';
         $div_end = '</div>';
@@ -39,7 +40,7 @@
           $thumb_file_path = $image_thumb . $image_file_name;
 
           # create lightbox anchor tag
-          $lightbox_anchor ='<a href="' . $file_path . '" data-lightbox="' . $image_lightbox . '" data-title="' . $image_title . '">'; 
+          $lightbox_anchor ='<a href="' . $file_path . '" data-lightbox="' . $image_lightbox . '" data-title="' . $image_title . '">';
 
           # create thumbnail
           $thumbnail = '<img class="img-responsive" src="' . $thumb_file_path . '" alt="' . $image_title . '" />';
@@ -50,7 +51,9 @@
             print_r( '</a>' );
           print_r( $div_end );
         }
-      ?>
+        ?>
+      </div>
+    </div>
   </div>
 </section>
 <?php 
