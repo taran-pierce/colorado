@@ -76,6 +76,16 @@
           </div>
         </div>
       </div>
+      <div class="col-xs-12 col-lg-4">
+         <div class="card">
+           <h3>Lory State Park</h3>
+           <div class="card-container">
+             <p>Lory State Park, is a state park located west of the ciy of Fort Collins and is north of Horsetooh Reservoir.</p>
+             <a href="/parks/lory-state-park.php" class="btn btn-primary">View Photos</a>
+             <a href="/parks/lory-state-park-thumbs.php" class="btn btn-info pull-right">View Thumbnails</a>
+           </div>
+         </div>
+      </div>
       <!--
       <div class="col-xs-12 col-lg-4">
         <div class="card big-t">

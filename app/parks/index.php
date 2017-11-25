@@ -220,6 +220,29 @@
             </div>
           </div>
         </div>
+        <div class="col-xs-12">
+          <div id="lory-state" class="card">
+           <h3>Lory State Park</h3>
+           <div class="card-container">
+             <p>Lory State Park, is a state park located west of the city of Fort Collins, Colorado and is north of Horsetooth Reservoir.</p>
+             <p><strong>Elevation:</strong> 6,780'</p>
+             <div class="gallery hidden-xs">
+               <div id="lory-state-carousel" class="owl-carousel owl-theme">
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2274.jpg" alt="Lory State Park" />
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2275.jpg" alt="Lory State Park" />
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2276.jpg" alt="Lory State Park" />
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2280.jpg" alt="Lory State Park" />
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2281.jpg" alt="Lory State Park" />
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2284.jpg" alt="Lory State Park" />
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2285.jpg" alt="Lory State Park" />
+                 <img class="owl-lazy img-responsive" data-src="/images/parks/lory-state/thumbs/IMG_2286.jpg" alt="Lory State Park" /<
+               </div>
+             </div>
+             </div>
+             <a href="/parks/lory-state-park.php" class="btn btn-lg btn-primary btn-block">View Larger Photos</a>
+           </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -231,6 +254,7 @@
     var $lumpyRidgeCarousel = $('#lumpy-ridge-carousel');
     var $bigThompsonCarousel = $('#big-thompson-carousel');
     var $southShoreCarousel = $('#south-shore-carousel');
+    var $loryStateCarousel = $('#lory-state-carousel');
 
     // set the options
     // they share the same options on this page
@@ -250,6 +274,7 @@
     initCarousel($lumpyRidgeCarousel, options);
     initCarousel($bigThompsonCarousel, options);
     initCarousel($southShoreCarousel, options);
+    initCarousel($loryStateCarousel, options);
   });
 </script>
 <?php include( ROOT . 'templates/bottom.php' ); ?>
