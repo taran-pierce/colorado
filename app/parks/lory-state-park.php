@@ -2,7 +2,7 @@
   require( "../config.php" );
 
   # Page Vars
-  $active_link = '/';
+  $title = 'Lory State Park';
 
   include( ROOT . 'templates/top.php' );
 ?>

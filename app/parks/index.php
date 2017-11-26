@@ -2,7 +2,7 @@
   require( "../config.php" );
 
   # Page Vars
-  $active_link = '/';
+  $title = 'Parks';
 
   include( ROOT . 'templates/top.php' );
 ?>

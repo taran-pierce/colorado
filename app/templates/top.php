@@ -12,7 +12,7 @@
     </script>
 
     <meta charset="utf-8">
-    <title>Colorado Adventures</title>
+    <title><?php $title ? print_r( $title ) : "Colorado Adventures" ?></title>
     <link href="/favicon.ico" rel="icon" type="image/x-icon" />
     <meta name="description" content="Colorado Adventures">
     <meta name="author" content="Taran Pierce">
@@ -23,6 +23,4 @@
     <![endif]-->
   </head>
   <body>
-    <?php 
-      include( ROOT . 'templates/nav-main.php' );
-    ?>
+    <?php include( ROOT . 'templates/nav-main.php' ); ?>

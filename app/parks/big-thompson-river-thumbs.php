@@ -2,7 +2,7 @@
   require( "../config.php" );
 
   # Page Vars
-  $active_link = '/';
+  $title = 'Big Thompson River';
 
   include( ROOT . 'templates/top.php' );
 ?>

@@ -2,7 +2,7 @@
   require( "config.php" );
 
   # Page Vars
-  $active_link = '/';
+  $title = 'Colorado Adventures';
 
   include( 'templates/top.php' );
 ?>
