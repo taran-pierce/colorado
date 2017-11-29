@@ -32,6 +32,9 @@
                 <a href="/parks/south-shore.php">South Shore Parkway</a>
               </li>
               <li>
+                <a href="/parks/lory-state-park.php">Lory State Park</a>
+              </li>
+              <li>
                 <a href="/parks">All Parks</a>
               </li>
             </ul>

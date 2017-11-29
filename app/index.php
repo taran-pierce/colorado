@@ -12,22 +12,6 @@
       <h1>Colorado Adventures</h1>
       <p>Just wanted a way to chronicle and show off some of our adventures in Colorado. It's so beautiful here and we like to take photos so we wanted a way that we could easily show them off to people.</p>
       <p>This seemed like the easiest way.</p>
-      <h2>Things to do in Colorado</h2>
-      <p>There are really mainly two things to do in Colorado. Some kind of adventure in nature or drink craft beer. Both of which are pretty freaking awesome.</p>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <h3>Hiking</h3>
-          <p>There is so much beautful nature here in Colorado. There are plenty of rivers, lakes, parks and mountains to go check out.</p>
-          <p>It's never ending.</p>
-          <a href="/parks" class="btn btn-primary">Parks</a>
-        </div>
-        <!--
-        <div class="col-xs-12 col-sm-6">
-          <h3>Craft Beer</h3>
-          <p>Every where you turn around there is a brewery and that isn't a bad thing. It seems as if almost everyone here enjoys beer and there are plenty of craft breweries to prove it.</p>
-        </div>
-        -->
-      </div>
     </div>
   </div>
 </section>
