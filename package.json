@@ -1,6 +1,6 @@
 {
   "name": "colorado",
-  "version": "1.6.5",
+  "version": "2.0.0",
   "description": "Site to share photos of Colorado adventures",
   "main": "app/index.php",
   "scripts": {
@@ -29,7 +29,6 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
-    "gulp-useref": "^3.1.2",
     "run-sequence": "^2.0.0"
   }
 }
