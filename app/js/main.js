@@ -1,31 +1,55 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-  console.log('DOMContentLoaded!')
-
-
-  // find all smooth scroll links
-  var $smoothLinks = $('[data-smooth-scroll]').find('li a');
-
-  // initiate smoothScroll
-  smoothScroll($smoothLinks);
+  //console.log('DOMContentLoaded!');
 });
 
-function initCarousel(element, options) {
-  element.owlCarousel(options);
+dropDownMenu();
+mobileNav();
+
+function dropDownMenu() {
+  let targets = document.getElementsByClassName('has-dropdown');
+  
+  for (let target of targets) {
+    target.addEventListener('click', function( e ) {
+      e.preventDefault();
+      let dropDown = target.nextElementSibling;
+      dropDown.classList.toggle('open');
+    });
+  }
+  
+  // trigger the closeDropDownMenu function
+  closeDropDownMenu();
 }
 
-function smoothScroll(elements) {
-  // loop through elements to smooth scroll
-  $.each(elements, function(key, value) {
-    // set the href
-    var href = '';
-    href = $(this).attr('href');
+function closeDropDownMenu() {
+  let targets = document.getElementsByClassName('dropdown');
+  
+  document.addEventListener('click', function( e ) {
+    let el = e.target || e.srcElement;
+    let hasDropDown = el.classList.contains('has-dropdown');
+    let isLink = el.getAttribute('href');
+  
+    // look for and close any dropdown menu
+    for ( let target of targets ) {
+      // did the click happen in the dropdown menu
+      if ( !hasDropDown ) {
+        // did the target have an href
+        if ( !isLink ) {
+          target.classList.remove('open');
+        }
+      }
+    }
+  });
+}
 
-    // highjack click event and smooth scroll
-    $(this).on('click', function(e) {
-      e.preventDefault();
-      document.querySelector(href).scrollIntoView({ 
-        behavior: 'smooth' 
-      });
-    });
+function mobileNav() {
+  let navButton = document.getElementById('main-nav');
+  
+  navButton.addEventListener('click', function() {
+    let id = navButton.id;
+    let menu = document.querySelectorAll( '[data-target]' );
+    
+    for ( let item of menu ) {
+      item.classList.toggle('open');
+    }
   });
 }

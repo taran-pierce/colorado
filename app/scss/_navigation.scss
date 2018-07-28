@@ -1,0 +1,118 @@
+header {
+  background-image: url('/images/light-veneer.png');
+  background-repeat: repeat;
+  background-position: top left;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  margin-bottom: 20px;
+
+  nav {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        &.brand:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        .logo {
+          float: left;
+        }
+
+        .nav-toggle {
+          float: right;
+          padding: 16px 20px;
+        }
+
+        a {
+          display: block;
+          padding: 16px 20px;
+          text-decoration: none;
+          border-left: 1px solid transparent;
+          border-right: 1px solid transparent;
+          transition: background-color .3s ease-in-out,
+                      border-color .3s ease-in-out;
+
+          &:hover,
+          &:active,
+          &:focus {
+            background-color: rgba(255,255,255,.5);
+            border-color: rgba(0,0,0,.1);
+          }
+        }
+      }
+
+      .navigation {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .4s ease-in-out,
+                    max-height .4s ease-in-out;
+        max-height: 0;
+
+        &.open {
+          border-top: 1px solid rgba(0,0,0,.1);
+          max-height: 600px;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &.dropdown {
+        background-image: url('/images/light-veneer.png');
+        background-repeat: repeat;
+        background-position: top left;
+        border: 1px solid rgba(0,0,0,.1);
+        transition: opacity .2s ease-in-out;
+        z-index: 10;
+
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  header {
+    nav {
+      ul {
+        display: table;
+
+        li {
+          display: inline-block;
+
+          .logo {
+            float: none;
+          }
+        }
+
+        .nav-toggle {
+          display: none;
+          float: none;
+        }
+
+        .navigation {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        &.dropdown {
+          visibility: hidden;
+          opacity: 0;
+          position: absolute;
+
+          &.open {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
+}
