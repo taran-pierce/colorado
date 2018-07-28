@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: $padding-base;
+  padding-right: $padding-base;
   align-items: flex-start;
 
   .card {

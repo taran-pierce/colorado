@@ -11,6 +11,9 @@
     <h1 class="">Lumpy Ridge Trailhead</h1>
     <p>Cool ass place, here is some info about it.</p>
     <?php
+
+      $count = 10;
+      $path = 'http://via.placeholder.com/';
       include( ROOT . 'templates/_carousel.php');
     ?>
   </div>
