@@ -3,9 +3,9 @@ var sass         = require('gulp-sass');
 var sourcemaps   = require('gulp-sourcemaps');
 var php          = require('gulp-connect-php');
 var browserSync  = require('browser-sync').create();
-var useref       = require('gulp-useref');
 var gulpIf       = require('gulp-if');
 var uglify       = require('gulp-uglify');
+var concat       = require('gulp-concat');
 var cssnano      = require('gulp-cssnano');
 var imagemin     = require('gulp-imagemin');
 var cache        = require('gulp-cache');
@@ -60,14 +60,18 @@ gulp.task( 'browserSync', ['php'], function() {
   });
 });
 
-// concat files and ugilfy them
-gulp.task( 'useref', function() {
-  return gulp.src( 'app/**/*.php' )
-    .pipe( useref() )
-    .pipe( gulpIf( '*.js', uglify() ) )
-    .pipe( gulpIf( '*.css', cssnano() ) )
-    .pipe( gulp.dest( 'dist' ) );
+gulp.task('bsBundle', function() {
+  gulp.src([
+      'app/node_modules/bootstrap/js/dist/dropdown.js',
+      'app/node_modules/bootstrap/js/dist/button.js',
+      'app/node_modules/bootstrap/js/dist/collapse.js',
+      'app/node_modules/bootstrap/js/dist/modal.js'
+    ])
+    .pipe(concat('bundle.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js/'))
 });
+
 
 // optimze and move images
 gulp.task('images', function() {
@@ -101,7 +105,7 @@ gulp.task( 'clean:dist', function() {
 // build project
 gulp.task( 'build', function(callback) {
   return runSequence( 'clean:dist',
-    ['sass', 'move-assets', 'useref', 'images'],
+    ['sass', 'move-assets', 'bsBundle', 'images'],
     callback
   );
 });
