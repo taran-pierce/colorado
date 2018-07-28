@@ -12,6 +12,7 @@ var cache        = require('gulp-cache');
 var del          = require('del');
 var runSequence  = require('run-sequence');
 
+
 // production vars
 var production = false;
 
@@ -19,6 +20,12 @@ var production = false;
 if ( process.env.NODE_ENV == 'production' ) {
   production = true;
 }
+
+// create JS bundle for carousel
+gulp.task('jsBundle', function() {
+  return gulp.src( 'app/node_modules/siema/dist/siema.min.js' )
+    .pipe( gulp.dest( 'app/js') )
+});
 
 // compile sass
 // production flag will trigger compression
@@ -59,6 +66,7 @@ gulp.task( 'browserSync', ['php'], function() {
     proxy: 'http://127.0.0.1:8011/'
   });
 });
+
 
 gulp.task('bsBundle', function() {
   gulp.src([
@@ -105,7 +113,7 @@ gulp.task( 'clean:dist', function() {
 // build project
 gulp.task( 'build', function(callback) {
   return runSequence( 'clean:dist',
-    ['sass', 'move-assets', 'bsBundle', 'images'],
+    ['sass', 'move-assets', 'jsBundle', 'images'],
     callback
   );
 });
