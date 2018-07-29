@@ -1,6 +1,8 @@
 .carousel {
   border: 1px solid $trans-black-1;
   background-color: $trans-white-9;
+  padding: 5px;
+  position: relative;
 
   .controls {
     border-top: 1px solid $trans-black-1;
@@ -20,6 +22,74 @@
       }
       &:last-child {
         border-left: 1px solid $trans-white-1;
+      }
+      // TODO working on mobile style of light box so we dont need display none here
+      &.view-toggle {
+        max-width: 50px;
+        //display: none;
+      }
+    }
+  }
+  
+  .carousel-wrapper {
+    position: relative;
+    -webkit-transform: opacity 1s ease-in-out;
+    -moz-transform: opacity 1s ease-in-out;
+    -ms-transform: opacity 1s ease-in-out;
+    -o-transform: opacity 1s ease-in-out;
+    transform: opacity 1s ease-in-out;
+    opacity: 1;
+  }
+
+  .thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -ms-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+
+    .thumb {
+      margin: 5px;
+
+      img {
+        border: 1px solid $trans-black-1;
+        transition: box-shadow .2s ease-in-out,
+                    border-color .2s ease-in-out;
+
+        &:hover {
+          border-color: $trans-black-3;
+          box-shadow: 0 1px 3px $trans-black-3;
+        }
+      }
+    }
+  }
+
+  &.thumb-view {
+    .carousel-wrapper {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+    }
+    .thumbnails {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    .controls {
+      a {
+        &.view-toggle {
+          display: inline-block;
+        }
       }
     }
   }
