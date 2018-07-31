@@ -6,8 +6,10 @@
   bottom: 0;
   display: flex;
   align-items: center;
+  overflow: hidden;
 
   .content {
+    padding: 20px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -17,14 +19,41 @@
     z-index: 10;
   }
 
-  // TODO finish mobile styling
-  // need to get bottom nav positioned to trigger close of lightbox
-  // should work with portrait and landscape
   .light-box-nav {
     background-color: $trans-black-3;
+    border-top: 1px solid $trans-black-1;
     height: 20px;
     display: block;
     z-index: 15;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    text-align: right;
+
+    a {
+      background-color: $trans-black-1;
+      border-right: 1px solid $trans-black-1;
+      padding: 20px;
+      transition: background .3s ease-in-out,
+                  border-color .3s ease-in-out;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $trans-black-2;
+        border-color: $trans-black-3
+      }
+    }
+  }
+}
+
+html.light-box-open {
+  overflow: hidden;
+
+  body {
+    overflow: hidden;
   }
 }
 
@@ -36,4 +65,36 @@
   bottom: 0;
   background-color: $trans-black-3;
   z-index: 1;
+}
+
+@media screen and (orientation: landscape) {
+  .light-box {
+    .light-box-nav {
+      left: initial;
+      top: 0;
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .light-box {
+    .light-box-nav {
+      display: none;
+    }
+
+    .content {
+      height: 600px;
+      width: 600px;
+
+      &::after {
+        color: #fff;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        content: 'You can hit the escape key or click outside of the light box to close it';
+      }
+    }
+  }
 }

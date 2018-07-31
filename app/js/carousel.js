@@ -67,25 +67,44 @@ function lightBox() {
 }
 
 function createLightBox( id ) {
-  console.log('oh hai createLightBox ' + id);
+  //console.log('oh hai createLightBox ' + id);
   
   let contentContainer = document.createElement('div');
   contentContainer.classList.add('light-box');
   
   let content = document.createElement('div');
   content.classList.add('content');
+  
+  let contentText = document.createElement('p');
+  contentText.innerHTML = 'Just some test content';
+  
+  content.appendChild( contentText );
   contentContainer.appendChild( content );
   
   let lightBoxNav = document.createElement('div');
   lightBoxNav.classList.add('light-box-nav');
   let navToggle = document.createElement('a');
   navToggle.innerHTML = "X";
-  // TODO finish styling this so that you can close it on mobile easily
+  
+  navToggle.addEventListener('click', function ( e ) {
+    e.preventDefault();
+    
+    let lightBox = document.getElementsByClassName('light-box')[0];
+    lightBox.remove();
+    
+    let backDrop = document.getElementsByClassName('light-box-backdrop')[0];
+    backDrop.remove();
+    
+    document.documentElement.classList.remove('light-box-open');
+  });
+  
   lightBoxNav.appendChild( navToggle );
   
   contentContainer.appendChild( lightBoxNav );
   
   document.body.appendChild( contentContainer );
+  
+  document.documentElement.classList.add('light-box-open');
 }
 
 function createBackDrop() {
@@ -99,10 +118,20 @@ function createBackDrop() {
 }
 
 function closeBackDrop( backDrop ) {
+  let lightBox = document.getElementsByClassName('light-box')[0];
+  
   backDrop.addEventListener('click', function() {
     this.remove();
-  
-    let lightBox = document.getElementsByClassName('light-box')[0];
     lightBox.remove();
+    document.documentElement.classList.remove('light-box-open');
   });
+  
+  document.onkeydown = function( e ) {
+    e = e || window.event;
+    if ( e.keyCode == 27 ) {
+      backDrop.remove();
+      lightBox.remove();
+      document.documentElement.classList.remove('light-box-open');
+    }
+  };
 }
