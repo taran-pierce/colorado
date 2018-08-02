@@ -22,7 +22,8 @@ function carouselNavigation() {
   let buttons = controls.children;
   
   for ( let button of buttons ) {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function( e ) {
+      e.preventDefault();
       let target = button.getAttribute('href');
       
       if ( target === '#next') {
@@ -50,7 +51,8 @@ function lightBox() {
   
   for ( let target of targets ) {
     
-    target.addEventListener('click', function() {
+    target.addEventListener('click', function( e ) {
+      e.preventDefault();
       let el = target.children[0];
       
       console.log('el ', el);
@@ -120,7 +122,8 @@ function createBackDrop() {
 function closeBackDrop( backDrop ) {
   let lightBox = document.getElementsByClassName('light-box')[0];
   
-  backDrop.addEventListener('click', function() {
+  backDrop.addEventListener('click', function( e ) {
+    e.preventDefault();
     this.remove();
     lightBox.remove();
     document.documentElement.classList.remove('light-box-open');

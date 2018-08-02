@@ -28,7 +28,7 @@
             <a href="/parks/lory-state-park.php">Lory State Park</a>
           </li>
           <li>
-            <a href="/parks.php">All Parks</a>
+            <a href="/parks/index.php">All Parks</a>
           </li>
         </ul>
       </li>
