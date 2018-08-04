@@ -88,7 +88,7 @@ gulp.task('bsBundle', function() {
 
 // optimze and move images
 gulp.task('images', function() {
-  return gulp.src( 'app/images/**/*.+(png|jpg|jpg|gif|svg)')
+  return gulp.src( 'app/images/**/*.+(png|jpg|jpg|svg)')
     .pipe( cache( imagemin([
         imagemin.gifsicle({ interlaced: true }),
         imagemin.jpegtran({ progressive: true }),

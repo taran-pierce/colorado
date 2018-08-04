@@ -24,6 +24,7 @@ function carouselNavigation() {
   for ( let button of buttons ) {
     button.addEventListener('click', function( e ) {
       e.preventDefault();
+      
       let target = button.getAttribute('href');
       
       if ( target === '#next') {
@@ -42,6 +43,7 @@ function carouselView() {
   
   toggle.addEventListener('click', function( e ) {
     e.preventDefault();
+    
     container.classList.toggle('thumb-view');
   });
 }
@@ -53,91 +55,129 @@ function lightBox() {
     
     target.addEventListener('click', function( e ) {
       e.preventDefault();
+      
       let el = target.children[0];
-      
-      //console.log('el ', el);
       let href = el.getAttribute('href');
-  
       let id = href.split('-')[2];
-  
-      //console.log('id ' + id);
-      
       let image = document.createElement('img');
+      
+      // TODO needs to be dynamic of course
       image.src = '/images/parks/lumpy-ridge-trailhead/large/' + id + '.jpg';
+      
       image.classList.add('img-responsive');
       
-      //console.log(image);
-      
       createLightBox( id, image );
-      createBackDrop();
     });
   }
 }
 
 function createLightBox( id, image ) {
-  //console.log('oh hai createLightBox ' + id);
+  // create reference object to be passed around
+  let refs = {};
   
+  // make light-box div
   let contentContainer = document.createElement('div');
   contentContainer.classList.add('light-box');
   
+  // make content div for light-box
   let content = document.createElement('div');
   content.classList.add('content');
   
-  //let contentText = document.createElement('p');
-  //contentText.innerHTML = 'Just some test content';
-  //content.appendChild( contentText );
-  
+  // append the image to content and add to container
   content.appendChild( image );
   contentContainer.appendChild( content );
   
+  // create nav for light-box
   let lightBoxNav = document.createElement('div');
-  lightBoxNav.classList.add('light-box-nav');
-  
   let navToggle = document.createElement('a');
   navToggle.innerHTML = "X";
+  lightBoxNav.classList.add('light-box-nav');
   
-  navToggle.addEventListener('click', function ( e ) {
-    e.preventDefault();
-    
-    let lightBox = document.getElementsByClassName('light-box')[0];
-    lightBox.remove();
-    
-    let backDrop = document.getElementsByClassName('light-box-backdrop')[0];
-    backDrop.remove();
-    
-    document.documentElement.classList.remove('light-box-open');
-  });
-  
+  // add nav toggle to nav
   lightBoxNav.appendChild( navToggle );
   
+  // add nav to light-box
   contentContainer.appendChild( lightBoxNav );
   
+  // add to reference object
+  refs = {
+    'light-box': contentContainer,
+    'nav' : lightBoxNav
+  };
+  
+  // bind click event for closing light-box
+  navToggle.addEventListener('click', function ( e ) {
+    e.preventDefault();
+    closeLightBox( refs );
+  });
+  
+  // add light-box to DOM
   document.body.appendChild( contentContainer );
   
-  lightBoxSwipe( contentContainer );
+  // make backDrop for light-box
+  createBackDrop( refs );
   
+  let viewportHeight = document.documentElement.clientHeight;
+  let imageHeight = contentContainer.getElementsByTagName('img')[0];
+
+  // let the image be added to the DOM then calculate sizes
+  setTimeout(function() {
+    // how tall is the image
+    imageHeight = imageHeight.offsetHeight;
+    
+    // find difference of viewport and image
+    let difference = viewportHeight - imageHeight;
+    
+    // will be used to set CSS: needs to be in pixels
+    difference = difference + 'px';
+    
+    // store in reference object
+    refs['difference'] = difference;
+    
+    // set the height of the nav
+    setLightBoxNavHeight( lightBoxNav, difference);
+  }, 100);
+  
+  // watch for swipe events to make it easier to close the light-box
+  lightBoxSwipe( contentContainer, refs );
+  
+  // add class to html so we can control some css
   document.documentElement.classList.add('light-box-open');
 }
 
-function createBackDrop() {
+function closeLightBox( refs ) {
+  let lightBox = refs['light-box'];
+  let backDrop = refs['backDrop'];
+  
+  lightBox.remove();
+  backDrop.remove();
+  
+  document.documentElement.classList.remove('light-box-open');
+};
+
+function setLightBoxNavHeight(nav, difference) {
+  nav.style.height = difference;
+}
+
+function createBackDrop( refs ) {
   let backDrop = document.createElement('div');
   
   backDrop.classList.add('light-box-backdrop');
+  
+  refs['backDrop'] = backDrop;
 
   document.body.appendChild( backDrop );
   
-  closeBackDrop( backDrop );
+  document.onkeydown = function( e ) {
+    e = e || window.event;
+    if ( e.keyCode == 27 ) {
+      closeLightBox( refs );
+    }
+  };
 }
 
-function closeBackDrop( backDrop ) {
+function bindbackDropClose( backDrop ) {
   let lightBox = document.getElementsByClassName('light-box')[0];
-  
-  backDrop.addEventListener('click', function( e ) {
-    e.preventDefault();
-    this.remove();
-    lightBox.remove();
-    document.documentElement.classList.remove('light-box-open');
-  });
   
   document.onkeydown = function( e ) {
     e = e || window.event;
@@ -149,7 +189,7 @@ function closeBackDrop( backDrop ) {
   };
 }
 
-function lightBoxSwipe( contentContainer ) {
+function lightBoxSwipe( contentContainer, refs ) {
   let touchstartX = 0;
   let touchstartY = 0;
   let touchendX = 0;
@@ -172,26 +212,39 @@ function lightBoxSwipe( contentContainer ) {
     let backDrop = document.getElementsByClassName('light-box-backdrop')[0];
   
     if (touchendX < touchstartX) {
-      console.log('Swiped left');
-      contentContainer.remove();
-      backDrop.remove();
-      document.documentElement.classList.remove('light-box-open');
+      //console.log('Swiped left');
+      //contentContainer.remove();
+      //backDrop.remove();
+      //document.documentElement.classList.remove('light-box-open');
+      closeLightBox( refs );
     }
     
     if (touchendX > touchstartX) {
-      console.log('Swiped right');
+      //console.log('Swiped right');
     }
     
     if (touchendY < touchstartY) {
-      console.log('Swiped up');
+      //console.log('Swiped up');
     }
     
     if (touchendY > touchstartY) {
-      console.log('Swiped down');
+      //console.log('Swiped down');
     }
     
     if (touchendY === touchstartY) {
-      console.log('Tap');
+      //console.log('Tap');
     }
   }
 }
+
+var resizeTimer;
+
+window.addEventListener('resize', function(){
+  
+  clearTimeout( resizeTimer );
+  
+  resizeTimer = setTimeout(function() {
+  
+    console.log('oh hai resize stopped');
+  }, 150);
+}, true);

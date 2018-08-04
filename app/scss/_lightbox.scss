@@ -9,6 +9,9 @@
   overflow: hidden;
 
   .content {
+    background-image: url('/images/topography.png');
+    background-repeat: repeat;
+    background-position: top left;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -28,7 +31,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px 0;
     text-align: right;
 
     a {
@@ -76,6 +78,7 @@ html.light-box-open {
       padding-right: 50px;
     }
     .light-box-nav {
+      padding: 0;
       left: initial;
       top: 0;
       height: 100%;
@@ -99,13 +102,8 @@ html.light-box-open {
 
 @media (min-width: 992px) {
   .light-box {
-    .light-box-nav {
-      //display: none;
-    }
-
     .content {
-      //height: 600px;
-      //width: 600px;
+      text-align: center;
 
       &::after {
         color: #fff;
