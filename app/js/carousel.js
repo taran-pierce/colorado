@@ -55,20 +55,26 @@ function lightBox() {
       e.preventDefault();
       let el = target.children[0];
       
-      console.log('el ', el);
+      //console.log('el ', el);
       let href = el.getAttribute('href');
   
       let id = href.split('-')[2];
   
-      console.log('id ' + id);
+      //console.log('id ' + id);
       
-      createLightBox( id );
+      let image = document.createElement('img');
+      image.src = '/images/parks/lumpy-ridge-trailhead/large/' + id + '.jpg';
+      image.classList.add('img-responsive');
+      
+      //console.log(image);
+      
+      createLightBox( id, image );
       createBackDrop();
     });
   }
 }
 
-function createLightBox( id ) {
+function createLightBox( id, image ) {
   //console.log('oh hai createLightBox ' + id);
   
   let contentContainer = document.createElement('div');
@@ -77,14 +83,16 @@ function createLightBox( id ) {
   let content = document.createElement('div');
   content.classList.add('content');
   
-  let contentText = document.createElement('p');
-  contentText.innerHTML = 'Just some test content';
+  //let contentText = document.createElement('p');
+  //contentText.innerHTML = 'Just some test content';
+  //content.appendChild( contentText );
   
-  content.appendChild( contentText );
+  content.appendChild( image );
   contentContainer.appendChild( content );
   
   let lightBoxNav = document.createElement('div');
   lightBoxNav.classList.add('light-box-nav');
+  
   let navToggle = document.createElement('a');
   navToggle.innerHTML = "X";
   

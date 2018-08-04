@@ -14,12 +14,15 @@
   <div class="carousel-wrapper">
     <div class="siema">
       <?php
-        for ($i = 0; $i <= $count; $i++) {
+        for ($i = 1; $i <= $count; $i++) {
+          $file_path_large = $path . '/large/' . $i . '.jpg';
+          $file_path_desktop = $path . '/desktop/' . $i . '.jpg';
+          $file_path_mobile = $path . '/mobile/' . $i . '.jpg';
+
           print_r('<picture>');
-            print_r('<source srcset="' . $path . '1170x150" media="(min-width: 1200px)">');
-            print_r('<source srcset="' . $path . '970x150" media="(min-width: 992px)">');
-            print_r('<source srcset="' . $path . '740x150" media="(min-width: 768px)">');
-            print_r('<img class="img-responsive" src="' . $path .'450x150">');
+            print_r('<source srcset="' . $file_path_large . '" media="(min-width: 1200px)">');
+            print_r('<source srcset="' . $file_path_desktop . '" media="(min-width: 768px)">');
+            print_r('<img class="img-responsive" src="' . $file_path_mobile .'">');
           print_r('</picture>');
         }
       ?>
@@ -28,9 +31,11 @@
   <div class="thumbnails">
     <?php
         for ($i = 1; $i <= $count; $i++) {
+          $file_path_thumbs = $path . '/thumbs/' . $i . '.jpg';
+
           print_r('<div class="thumb">');
             print_r('<a href="#light-box-' . $i . '">');
-              print_r('<img class="img-responsive" src="' . $path .'150x150">');
+              print_r('<img class="img-responsive" src="' . $file_path_thumbs .'">');
             print_r('</a>');
           print_r('</div>');
         }
