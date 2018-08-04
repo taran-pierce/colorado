@@ -3,6 +3,7 @@
 
   # Page Vars
   $title = 'Lory State Park';
+  $canonical_uri = '/parks/lory-state-park.php';
 
   include( ROOT . 'templates/top.php' );
 ?>

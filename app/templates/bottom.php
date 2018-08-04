@@ -3,6 +3,9 @@
     ?>
     <script type="text/javascript" src="/js/main.js"></script>
 
-    <?php include( "_scripts.php" ) ?>
+    <?php
+      $js[] = '/js/lazysizes.min.js';
+      include( "_scripts.php" )
+    ?>
   </body>
 </html>

@@ -3,6 +3,8 @@
 
   # Page Vars
   $title = 'Estes Park';
+  $canonical_uri = '/parks/estes-park.php';
+
 
   include( ROOT . 'templates/top.php' );
 ?>

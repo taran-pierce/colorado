@@ -2,13 +2,14 @@
   require( "../config.php" );
 
   # Page Vars
-  $title = 'Lumpy Ridge Trailhead';
+  $title = 'Big Thompson River';
+  $canonical_uri = '/parks/big-thompson-river.php';
 
   include( ROOT . 'templates/top.php' );
 ?>
 <section>
   <div class="container">
-    <h1 class="">Lumpy Ridge Trailhead</h1>
+    <h1 class="">Big Thompson River</h1>
     <p>Cool ass place, here is some info about it.</p>
     <?php
 

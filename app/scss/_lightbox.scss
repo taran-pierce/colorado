@@ -9,7 +9,6 @@
   overflow: hidden;
 
   .content {
-    //padding: 20px;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -51,9 +50,13 @@
 
 html.light-box-open {
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 
   body {
     overflow: hidden;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -81,15 +84,28 @@ html.light-box-open {
   }
 }
 
+@media screen and (orientation: landscape ) {
+  .light-box {
+    .content {
+      padding-right: 0;
+    }
+    .light-box-nav {
+      left: 0;
+      top: initial;
+      height: 22px;
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .light-box {
     .light-box-nav {
-      display: none;
+      //display: none;
     }
 
     .content {
-      height: 600px;
-      width: 600px;
+      //height: 600px;
+      //width: 600px;
 
       &::after {
         color: #fff;

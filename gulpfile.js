@@ -27,6 +27,11 @@ gulp.task('jsBundle', function() {
     .pipe( gulp.dest( 'app/js') )
 });
 
+gulp.task('lazyBundle', function() {
+  return gulp.src( 'app/node_modules/lazysizes/lazysizes.min.js' )
+    .pipe( gulp.dest( 'app/js' ) )
+});
+
 // compile sass
 // production flag will trigger compression
 gulp.task( 'sass', function() {
@@ -113,7 +118,7 @@ gulp.task( 'clean:dist', function() {
 // build project
 gulp.task( 'build', function(callback) {
   return runSequence( 'clean:dist',
-    ['sass', 'move-assets', 'jsBundle', 'images'],
+    ['sass', 'move-assets', 'jsBundle', 'lazyBundle', 'images'],
     callback
   );
 });

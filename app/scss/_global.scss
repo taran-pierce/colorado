@@ -4,6 +4,10 @@ body {
   background-position: top left;
 }
 
+section {
+  overflow: hidden;
+}
+
 .img-responsive {
   max-width: 100%;
 }

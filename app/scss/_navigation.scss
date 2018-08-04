@@ -93,6 +93,14 @@ header {
 
           .logo {
             float: none;
+            padding-left: 0;
+
+            &:hover,
+            &:active,
+            &:focus {
+              border-color: transparent;
+              background-color: inherit;
+            }
           }
         }
 

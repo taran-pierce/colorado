@@ -3,6 +3,7 @@
 
   # Page Vars
   $title = 'South Shore';
+  $canonical_uri = '/parks/south-shore.php';
 
   include( ROOT . 'templates/top.php' );
 ?>

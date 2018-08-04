@@ -114,6 +114,8 @@ function createLightBox( id, image ) {
   
   document.body.appendChild( contentContainer );
   
+  lightBoxSwipe( contentContainer );
+  
   document.documentElement.classList.add('light-box-open');
 }
 
@@ -145,4 +147,51 @@ function closeBackDrop( backDrop ) {
       document.documentElement.classList.remove('light-box-open');
     }
   };
+}
+
+function lightBoxSwipe( contentContainer ) {
+  let touchstartX = 0;
+  let touchstartY = 0;
+  let touchendX = 0;
+  let touchendY = 0;
+
+  const gestureZone = contentContainer;
+  
+  gestureZone.addEventListener('touchstart', function(event) {
+    touchstartX = event.changedTouches[0].screenX;
+    touchstartY = event.changedTouches[0].screenY;
+  }, false);
+  
+  gestureZone.addEventListener('touchend', function(event) {
+    touchendX = event.changedTouches[0].screenX;
+    touchendY = event.changedTouches[0].screenY;
+    handleGesture();
+  }, false);
+  
+  function handleGesture() {
+    let backDrop = document.getElementsByClassName('light-box-backdrop')[0];
+  
+    if (touchendX < touchstartX) {
+      console.log('Swiped left');
+      contentContainer.remove();
+      backDrop.remove();
+      document.documentElement.classList.remove('light-box-open');
+    }
+    
+    if (touchendX > touchstartX) {
+      console.log('Swiped right');
+    }
+    
+    if (touchendY < touchstartY) {
+      console.log('Swiped up');
+    }
+    
+    if (touchendY > touchstartY) {
+      console.log('Swiped down');
+    }
+    
+    if (touchendY === touchstartY) {
+      console.log('Tap');
+    }
+  }
 }

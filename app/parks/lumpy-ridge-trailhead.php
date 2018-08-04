@@ -3,6 +3,7 @@
 
   # Page Vars
   $title = 'Lumpy Ridge Trailhead';
+  $canonical_uri = '/parks/lumpy-ridge-trailhead.php';
 
   include( ROOT . 'templates/top.php' );
 ?>
