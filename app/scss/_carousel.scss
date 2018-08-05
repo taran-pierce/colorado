@@ -26,7 +26,7 @@
       }
       // TODO working on mobile style of light box so we dont need display none here
       &.view-toggle {
-        max-width: 50px;
+        //max-width: 50px;
       }
     }
   }
@@ -55,6 +55,7 @@
 
     .thumb {
       margin: 5px;
+      flex: auto;
 
       img {
         border: 1px solid $trans-black-1;
@@ -79,6 +80,7 @@
       opacity: 1;
       visibility: visible;
       position: relative;
+      text-align: center;
     }
   }
 }

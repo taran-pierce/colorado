@@ -21,7 +21,7 @@
 
           print_r('<picture>');
             print_r('<source srcset="' . $file_path_large . '" media="(min-width: 1200px)">');
-            print_r('<source srcset="' . $file_path_desktop . '" media="(min-width: 768px)">');
+            print_r('<source srcset="' . $file_path_desktop . '" media="(min-width: 568px)">');
             print_r('<img class="img-responsive lazyload" data-park="' . $park . '" data-src="' . $file_path_mobile .'" src="/images/spacer.gif">');
           print_r('</picture>');
         }

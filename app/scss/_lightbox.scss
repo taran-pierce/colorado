@@ -14,11 +14,16 @@
     background-position: top left;
     margin-left: auto;
     margin-right: auto;
+    overflow: scroll;
     position: relative;
     width: 100%;
     height: 100%;
     background-color: #fff;
     z-index: 10;
+
+    img {
+      display: block;
+    }
   }
 
   .light-box-nav {
@@ -34,8 +39,10 @@
     text-align: right;
 
     a {
-      background-color: $trans-black-1;
+      background-color: $trans-black-8;
       border-right: 1px solid $trans-black-1;
+      color: #fff;
+      display: block;
       padding: 20px;
       transition: background .3s ease-in-out,
                   border-color .3s ease-in-out;
@@ -75,7 +82,7 @@ html.light-box-open {
 @media screen and (min-width: 568px) and (orientation: landscape) {
   .light-box {
     .content {
-      padding-right: 50px;
+      //padding-right: 50px;
     }
     .light-box-nav {
       padding: 0;
@@ -91,6 +98,7 @@ html.light-box-open {
   .light-box {
     .content {
       padding-right: 0;
+      overflow: hidden;
     }
     .light-box-nav {
       left: 0;
@@ -104,14 +112,22 @@ html.light-box-open {
   .light-box {
     .content {
       text-align: center;
+    }
+  }
+}
 
-      &::after {
-        color: #fff;
-        position: absolute;
-        bottom: -30px;
-        left: 0;
-        content: 'You can hit the escape key or click outside of the light box to close it';
-      }
+@media (min-width: 1200px) {
+  .light-box {
+    .content {
+      overflow: scroll;
+    }
+
+    .light-box-nav {
+      left: initial;
+      top: 0;
+      bottom: 0;
+      // TODO write my JS better we do not need important
+      height: 100% !important;
     }
   }
 }
