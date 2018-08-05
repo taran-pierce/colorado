@@ -11,11 +11,12 @@
 <section>
   <div class="container">
     <h1 class="">Estes Park</h1>
-    <p>Cool ass place, here is some info about it.</p>
+    <p>Estes Park is a town in northern Colorado. It’s known as a base for the Rocky Mountain National Park, home to wildlife including elk and bears, plus miles of trails.</p>
     <?php
 
-      $count = 10;
-      $path = 'http://via.placeholder.com/';
+      $count = 26;
+      $park = 'estes-park';
+      $path = '/images/parks/estes-park';
       include( ROOT . 'templates/_carousel.php');
     ?>
   </div>

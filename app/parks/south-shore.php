@@ -10,11 +10,12 @@
 <section>
   <div class="container">
     <h1 class="">South Shore</h1>
-    <p>Cool ass place, here is some info about it.</p>
+    <p>Located along the south shore of Lake Loveland on US Highway 34. Parking is located along the south shore of the lake, and easy access is provided to the Recreation Trail as it goes along the lake shore. There are numerous benches to rest on, and many beautiful sculptures to enjoy!</p>
     <?php
 
-      $count = 10;
-      $path = 'http://via.placeholder.com/';
+      $count = 40;
+      $park = 'south-shore';
+      $path = '/images/parks/south-shore';
       include( ROOT . 'templates/_carousel.php');
     ?>
   </div>

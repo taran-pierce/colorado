@@ -10,11 +10,12 @@
 <section>
   <div class="container">
     <h1 class="">Lory State Park</h1>
-    <p>Cool ass place, here is some info about it.</p>
+    <p>Lory State Park, is a state park located west of the ciy of Fort Collins and is north of Horsetooh Reservoir.</p>
     <?php
 
-      $count = 10;
-      $path = 'http://via.placeholder.com/';
+      $count = 54;
+      $park = 'lory-state';
+      $path = '/images/parks/lory-state';
       include( ROOT . 'templates/_carousel.php');
     ?>
   </div>
