@@ -49,8 +49,10 @@ function carouselView() {
 }
 
 function lightBox() {
+  // grab all the thumbnails
   let targets = document.getElementsByClassName('thumb');
   
+  // loop through and bind click event
   for ( let target of targets ) {
     
     target.addEventListener('click', function( e ) {
@@ -58,12 +60,11 @@ function lightBox() {
       
       let el = target.children[0];
       let href = el.getAttribute('href');
+      let parkName = el.children[0].getAttribute('data-park');
       let id = href.split('-')[2];
       let image = document.createElement('img');
       
-      // TODO needs to be dynamic of course
-      image.src = '/images/parks/lumpy-ridge-trailhead/large/' + id + '.jpg';
-      
+      image.src = '/images/parks/' + parkName + '/large/' + id + '.jpg';
       image.classList.add('img-responsive');
       
       createLightBox( id, image );
@@ -117,16 +118,32 @@ function createLightBox( id, image ) {
   // make backDrop for light-box
   createBackDrop( refs );
   
-  let viewportHeight = document.documentElement.clientHeight;
-  let imageHeight = contentContainer.getElementsByTagName('img')[0];
+  getNavHeight( refs );
+  
+  // watch for swipe events to make it easier to close the light-box
+  lightBoxSwipe( contentContainer, refs );
+  
+  // add class to html so we can control some css
+  document.documentElement.classList.add('light-box-open');
+  
+  watchForResize( refs );
+}
 
+function getNavHeight( refs ) {
+  let viewportHeight = document.documentElement.clientHeight;
+  let imageHeight = refs['light-box'].getElementsByTagName('img')[0];
+  let difference = viewportHeight - imageHeight;
+  
+  refs['viewportHeight'] = viewportHeight;
+  refs['imageHeight'] = imageHeight;
+  
   // let the image be added to the DOM then calculate sizes
   setTimeout(function() {
     // how tall is the image
-    imageHeight = imageHeight.offsetHeight;
+    imageHeight = refs['imageHeight'].offsetHeight;
     
     // find difference of viewport and image
-    let difference = viewportHeight - imageHeight;
+    difference = refs['viewportHeight'] - imageHeight;
     
     // will be used to set CSS: needs to be in pixels
     difference = difference + 'px';
@@ -135,14 +152,10 @@ function createLightBox( id, image ) {
     refs['difference'] = difference;
     
     // set the height of the nav
-    setLightBoxNavHeight( lightBoxNav, difference);
+    setLightBoxNavHeight( refs );
   }, 100);
   
-  // watch for swipe events to make it easier to close the light-box
-  lightBoxSwipe( contentContainer, refs );
-  
-  // add class to html so we can control some css
-  document.documentElement.classList.add('light-box-open');
+  return refs;
 }
 
 function closeLightBox( refs ) {
@@ -155,8 +168,11 @@ function closeLightBox( refs ) {
   document.documentElement.classList.remove('light-box-open');
 };
 
-function setLightBoxNavHeight(nav, difference) {
-  nav.style.height = difference;
+function setLightBoxNavHeight( refs ) {
+  let nav = refs['nav'];
+  let height = refs['difference'];
+  
+  nav.style.height = height;
 }
 
 function createBackDrop( refs ) {
@@ -213,9 +229,6 @@ function lightBoxSwipe( contentContainer, refs ) {
   
     if (touchendX < touchstartX) {
       //console.log('Swiped left');
-      //contentContainer.remove();
-      //backDrop.remove();
-      //document.documentElement.classList.remove('light-box-open');
       closeLightBox( refs );
     }
     
@@ -239,12 +252,14 @@ function lightBoxSwipe( contentContainer, refs ) {
 
 var resizeTimer;
 
-window.addEventListener('resize', function(){
+function watchForResize( refs ) {
   
-  clearTimeout( resizeTimer );
-  
-  resizeTimer = setTimeout(function() {
-  
-    console.log('oh hai resize stopped');
-  }, 150);
-}, true);
+  window.addEventListener('resize', function(){
+    
+    clearTimeout( resizeTimer );
+    
+    resizeTimer = setTimeout(function() {
+      getNavHeight( refs );
+    }, 150);
+  }, true);
+}

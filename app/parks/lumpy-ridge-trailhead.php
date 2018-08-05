@@ -14,7 +14,8 @@
     <?php
 
       $count = 40;
-      $path = '/images/parks/lumpy-ridge-trailhead/';
+      $park = 'lumpy-ridge-trailhead';
+      $path = '/images/parks/lumpy-ridge-trailhead';
       include( ROOT . 'templates/_carousel.php');
     ?>
   </div>
