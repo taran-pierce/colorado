@@ -44,6 +44,19 @@ function carouselView() {
   toggle.addEventListener('click', function( e ) {
     e.preventDefault();
     
+    let text = toggle.innerHTML;
+    let newText = '';
+    
+    if ( text == 'thumbs') {
+      newText = 'carousel';
+    }
+    
+    if ( text == 'carousel' ) {
+      newText = 'thumbs';
+    }
+    
+    toggle.innerHTML = newText;
+    
     container.classList.toggle('thumb-view');
   });
 }
@@ -186,6 +199,7 @@ function createBackDrop( refs ) {
   
   document.onkeydown = function( e ) {
     e = e || window.event;
+    
     if ( e.keyCode == 27 ) {
       closeLightBox( refs );
     }
@@ -197,6 +211,7 @@ function bindbackDropClose( backDrop ) {
   
   document.onkeydown = function( e ) {
     e = e || window.event;
+    
     if ( e.keyCode == 27 ) {
       backDrop.remove();
       lightBox.remove();
