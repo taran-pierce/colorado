@@ -46,6 +46,30 @@
       $c_href_photos = '/parks/lory-state-park.php';
       include( 'templates/_card.php' );
     ?>
+    <?php
+      $c_heading = 'Garden of the Gods';
+      $c_paragraph = '<p>This place was super kick ass.</p>';
+      $c_href_photos = '/parks/garden-of-the-gods.php';
+      include( 'templates/_card.php' );
+    ?>
+    <?php
+      $c_heading = 'Rabbit Mountain';
+      $c_paragraph = '<p>Place down towards Longmont, also really cool place.</p>';
+      $c_href_photos = '/parks/rabbit-mountain.php';
+      include( 'templates/_card.php' );
+    ?>
+    <?php
+      $c_heading = "Arthur's Rock";
+      $c_paragraph = '<p>A trail in Lory State Park, is a state park located west of the ciy of Fort Collins and is north of Horsetooh Reservoir.</p>';
+      $c_href_photos = '/parks/arthurs-rock.php';
+      include( 'templates/_card.php' );
+    ?>
+    <?php
+      $c_heading = 'Coyote Ridge';
+      $c_paragraph = '<p>Open space on the way towards Fort Collins.</p>';
+      $c_href_photos = '/parks/coyote-ridge.php';
+      include( 'templates/_card.php' );
+    ?>
   </div>
 </section>
 <?php include 'templates/bottom.php' ?>

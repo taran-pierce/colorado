@@ -14,7 +14,7 @@
     background-position: top left;
     margin-left: auto;
     margin-right: auto;
-    overflow: scroll;
+    overflow: hidden;
     position: relative;
     width: 100%;
     height: 100%;
@@ -82,7 +82,7 @@ html.light-box-open {
 @media screen and (min-width: 568px) and (orientation: landscape) {
   .light-box {
     .content {
-      //padding-right: 50px;
+      overflow: scroll;
     }
     .light-box-nav {
       padding: 0;
@@ -119,7 +119,7 @@ html.light-box-open {
 @media (min-width: 1200px) {
   .light-box {
     .content {
-      overflow: scroll;
+      overflow: hidden;
     }
 
     .light-box-nav {

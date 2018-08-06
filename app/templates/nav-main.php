@@ -29,7 +29,16 @@
               <a href="/parks/lory-state-park.php">Lory State Park</a>
             </li>
             <li>
-              <a href="/parks/index.php">All Parks</a>
+              <a href="/parks/garden-of-the-gods.php">Garden of the Gods</a>
+            </li>
+            <li>
+              <a href="/parks/arthurs-rock.php">Arthur's Rock</a>
+            </li>
+            <li>
+              <a href="/parks/coyote-ridge.php">Coyote Ridge</a>
+            </li>
+            <li>
+              <a href="/parks/rabbit-mountain.php">Rabbit Mountain</a>
             </li>
           </ul>
         </li>
