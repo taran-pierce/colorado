@@ -12,7 +12,7 @@
     <h1 class="">Garden of the Gods</h1>
     <?php
 
-      $count = 82;
+      $count = 81;
       $park = 'garden-of-the-gods';
       $path = '/images/parks/garden-of-the-gods';
       include( ROOT . 'templates/_carousel.php');
