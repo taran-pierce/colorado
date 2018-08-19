@@ -42,6 +42,14 @@
             </li>
           </ul>
         </li>
+        <li data-target="main-nav" class="navigation">
+          <a class="has-dropdown" href="#places">Places</a>
+          <ul class="dropdown">
+            <li>
+              <a href="/places/mass/index.php">Boston</a>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </div>
