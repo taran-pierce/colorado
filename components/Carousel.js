@@ -39,7 +39,6 @@ class Carousel extends React.Component {
   render() {
     return (
       <section>
-        <h2>test</h2>
         <h3>We have {this.props.count} images!</h3>
         <div>
           <img src={this.props.imageArray[this.state.currentImage]} />
