@@ -1,4 +1,4 @@
-# Colorado 
+# Colorado `3.0.0`
 Just wanted a way to be able to show off some photos of places we have been here in Colorado since moving here.
 
 ## Setup
@@ -13,24 +13,10 @@ This of course can be modified, but the gulpfile.js will need to be updated as w
   /colorado
   |-package.json
   |
-  |-app
-  |  |-package.json
-  |  |-scss
-  |  |-js
-  |  |-css
-  |  |-images
-  |  |  |
-  |  |  |-parks/
-  |  |  
-  |  |-fonts
-  |  |-parks/
-  |  |-templates/
-  |
-  |-dist
-  |  |-css
-  |  |-js
-  |  |-fonts
-  |  |-images
+  |-/pages
+  |  |-index.js
+  |-/static
+  |  |-/images
 ```
 
 ## Gulp Commands

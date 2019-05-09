@@ -4,8 +4,9 @@
   "description": "Site to share photos of Colorado adventures",
   "main": "app/index.php",
   "scripts": {
-    "dev": "gulp",
-    "prod": "NODE_ENV=production gulp build"
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,10 @@
     "node-mime": "^1.0.0",
     "parsejson": "0.0.3",
     "run-sequence": "^2.0.0"
+  },
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
