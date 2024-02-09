@@ -1,11 +1,9 @@
 {
   "name": "colorado",
-  "version": "2.0.0",
-  "description": "Site to share photos of Colorado adventures",
-  "main": "app/index.php",
+  "version": "3.0.0",
+  "description": "Site to share photos of Colorado and other places I visit",
+  "main": "",
   "scripts": {
-    "dev": "gulp",
-    "prod": "NODE_ENV=production gulp build"
   },
   "repository": {
     "type": "git",
@@ -18,23 +16,5 @@
   },
   "homepage": "https://github.com/taran-pierce/colorado#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.12",
-    "del": "^3.0.0",
-    "fresh": "^0.5.2",
-    "gulp": "^3.9.1",
-    "gulp-cache": "^0.4.6",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect-php": "^1.0.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.1",
-    "gulp-uglify": "^3.0.0",
-    "hoek": "^5.0.3",
-    "lodash": "^4.17.10",
-    "node-mime": "^1.0.0",
-    "parsejson": "0.0.3",
-    "run-sequence": "^2.0.0"
   }
 }
