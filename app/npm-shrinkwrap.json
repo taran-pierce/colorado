@@ -1,12 +1,12 @@
 {
   "name": "colorado",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "colorado",
-      "version": "3.0.0",
+      "version": "3.0.1",
       "dependencies": {
         "@astrojs/check": "^0.5.2",
         "astro": "^4.3.5",
