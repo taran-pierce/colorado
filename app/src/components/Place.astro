@@ -1,0 +1,39 @@
+---
+interface Props {
+	data: object;
+}
+
+interface Place {
+  name: string,
+  imageGalleryKey: string,
+}
+
+interface Data {
+  places: Array<Place>,
+  name: string,
+}
+
+const {
+  data,
+} = Astro.props;
+
+const {
+  places,
+  name,
+} = data as Data;
+---
+<div class="place-wrapper">
+  <h2>{name}</h2>
+  <ul>
+    {places.map((place: Place) => (
+      <li>{place.name}</li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .place-wrapper {
+    border: 1px solid black;
+    padding: 1rem;
+  }
+</style>

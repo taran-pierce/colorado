@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [3.0.0] - 2024-02-09
 ### Added 
 - Welcome to the present
+- Install astro.build
 
 ## [Unreleased]
 - Light Box for full res photos

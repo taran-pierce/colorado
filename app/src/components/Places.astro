@@ -1,0 +1,39 @@
+---
+import Place from './Place.astro';
+
+interface Props {
+	data: Array<Location>;
+}
+
+interface Location {
+  name: string,
+  places: Array<Place>,
+}
+
+interface Place {
+  name: string,
+  imageGalleryKey: string,
+}
+
+const {
+  data,
+} = Astro.props;
+
+---
+<div class="places-container">
+  {data.map((location: Location) => {
+    return (
+      <Place data={location} />
+    )
+  })}
+</div>
+
+<style>
+  .places-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    border: 1px solid black;
+    padding: 1rem;
+  }
+</style>

@@ -1,15 +1,17 @@
 {
-  "name": "Colorado Adventures",
-  "version": "2.0.0",
-  "description": "Site for sharing pictures of hikes",
-  "main": "index.php",
+  "name": "app",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "lazysizes": "^4.0.4",
-    "siema": "^1.5.1"
+  "dependencies": {
+    "astro": "^4.3.5",
+    "@astrojs/check": "^0.5.2",
+    "typescript": "^5.3.3"
   }
 }

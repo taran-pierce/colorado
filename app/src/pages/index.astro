@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Places from '../components/Places.astro';
+---
+
+<Layout title="Welcome to my photos">
+	<main>
+		<h1>Welcome to my photos</h1>
+		<p>Just a place where I can show my photos to people that want to see them easier.</p>
+		<p>Plus I wanted to build something in Astro to see what it was like.</p>
+		<Places 
+			data={[
+			  {
+				  name: 'Colorado',
+				  places: [
+				    {
+							name: 'Arthurs Rock',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'Big Thompson',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'Lory State',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'Coyote Ridge',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'Estes Park',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'Garden of the Gods',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'Lumpy Ridge Trailhead',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'Rabbit Mountain',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+						{
+							name: 'South Shore',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+					],
+				},
+				{
+				  name: 'Massachusetts',
+				  places: [
+				    {
+							name: 'All over the place',
+							imageGalleryKey: 'cloudinary-folder-or-tag',
+						},
+					],
+				}
+			]}
+		/>
+		<p>Oh and I'm using <a href="https://www.facebook.com/Icons8" target="_blank">Icons8.com</a> for my icons!</p>
+	</main>
+</Layout>
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+</style>
