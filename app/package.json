@@ -1,13 +1,25 @@
 {
-  "name": "app",
-  "type": "module",
-  "version": "0.0.1",
+  "name": "colorado",
+  "version": "3.0.0",
+  "description": "Site to share photos of Colorado and other places I visit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taran-pierce/colorado.git"
+  },
+  "author": "Taran Pierce",
+  "bugs": {
+    "url": "https://github.com/taran-pierce/colorado/issues"
+  },
+  "homepage": "https://github.com/taran-pierce/colorado#readme",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "astro": "^4.3.5",
