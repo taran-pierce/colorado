@@ -1,6 +1,125 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Places from '../components/Places.astro';
+import { v2 as cloudinary } from 'cloudinary';
+
+
+cloudinary.config({
+	cloud_name: import.meta.env.CLOUDINARY_CLOUD_NAME,
+	api_key: import.meta.env.CLOUDINARY_API_KEY,
+	api_secret: import.meta.env.CLOUDINARY_SECRET,
+	// TODO may or may not need these when deployed
+	// secure: true,
+	// ssl_detected: true,
+});
+
+// grab all the images by tag name
+// doesnt include transformations though
+const getAssetsByTag = async (tag: string) => {
+	// Return colors in the response
+	const options = {
+		colors: true,
+	};
+
+	try {
+		// Get details about the asset
+		const result = await cloudinary.api.resources_by_tag(tag, options).then((data) => {
+			return data.resources;
+		});
+
+		const getUrls = await getTransformationUrls(result);
+
+		return getUrls;
+	} catch (error) {
+		console.error(error);
+	}
+};
+
+const getTransformationUrls = async (images: any) => {
+	try {
+		// TODO set up more transforms here of course
+		const imageURLs = images.map((image:any) => {
+			const imageURL = cloudinary.url(image.public_id, {
+				height: '200',
+				// width: ,
+				client_hints: "true",
+				crop: "fit",
+				format: "webp",
+				sizes: "100vw",
+				quality: 70,
+				secure: false,
+			});
+
+			return imageURL;
+		}); 
+
+		return imageURLs;
+	} catch {
+    console.log('had a problem!');
+	}
+};
+
+const placesData = [
+	{
+		name: 'Colorado',
+		places: [
+			{
+				name: 'Arthurs Rock',
+				imageGalleryKey: 'arthurs-rock',
+				images: await getAssetsByTag('arthurs-rock'),
+			},
+			{
+				name: 'Big Thompson',
+				imageGalleryKey: 'big-thompson',
+				images: await getAssetsByTag('big-thompson'),
+			},
+			{
+				name: 'Lory State',
+				imageGalleryKey: 'lory-state',
+				images: await getAssetsByTag('lory-state'),
+			},
+			{
+				name: 'Coyote Ridge',
+				imageGalleryKey: 'coyote-ridge',
+				images: await getAssetsByTag('coyote-ridge'),
+			},
+			{
+				name: 'Estes Park',
+				imageGalleryKey: 'estes-park',
+				images: await getAssetsByTag('estes-park'),
+			},
+			{
+				name: 'Garden of the Gods',
+				imageGalleryKey: 'garden-of-the-gods',
+				images: await getAssetsByTag('garden-of-the-gods'),
+			},
+			{
+				name: 'Lumpy Ridge Trailhead',
+				imageGalleryKey: 'lumpy-ridge-trailhead',
+				images: await getAssetsByTag('lumpy-ridge-trailhead'),
+			},
+			{
+				name: 'Rabbit Mountain',
+				imageGalleryKey: 'rabbit-mountain',
+				images: await getAssetsByTag('rabbit-mountain'),
+			},
+			{
+				name: 'South Shore',
+				imageGalleryKey: 'south-shore',
+				images: await getAssetsByTag('south-shore'),
+			},
+		],
+	},
+	{
+		name: 'Massachusetts',
+		places: [
+			{
+				name: 'All over the place',
+				imageGalleryKey: 'mass',
+			},
+		],
+	}
+];
 ---
 
 <Layout title="Welcome to my photos">
@@ -8,60 +127,7 @@ import Places from '../components/Places.astro';
 		<h1>Welcome to my photos</h1>
 		<p>Just a place where I can show my photos to people that want to see them easier.</p>
 		<p>Plus I wanted to build something in Astro to see what it was like.</p>
-		<Places 
-			data={[
-			  {
-				  name: 'Colorado',
-				  places: [
-				    {
-							name: 'Arthurs Rock',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'Big Thompson',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'Lory State',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'Coyote Ridge',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'Estes Park',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'Garden of the Gods',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'Lumpy Ridge Trailhead',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'Rabbit Mountain',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-						{
-							name: 'South Shore',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-					],
-				},
-				{
-				  name: 'Massachusetts',
-				  places: [
-				    {
-							name: 'All over the place',
-							imageGalleryKey: 'cloudinary-folder-or-tag',
-						},
-					],
-				}
-			]}
-		/>
+		<Places data={placesData} />
 		<p>Using Astro.build for the frontend of the site: <a href="https://astro.build/" target="_blank">Astro.build</a></p>
 		<p>Oh and I'm using <a href="https://www.facebook.com/Icons8" target="_blank">Icons8.com</a> for my icons!</p>
 	</main>
