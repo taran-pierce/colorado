@@ -9,6 +9,12 @@ on:
     branches:
       - master
 
+env:
+  CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+  CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+  CLOUDINARY_SECRET: ${{ secrets.CLOUDINARY_SECRET }}
+  CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
