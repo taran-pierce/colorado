@@ -4,8 +4,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [3.0.4] - 2024-02-10
+## [3.0.5] - 2024-02-10
 ### Updated 
+- Workign on the layout and some styling
+- Added toggle for forcing SSL on cloudinary depending on env
+
+## [3.0.4] - 2024-02-10
+### Added 
 - Added Cloudinary and a few pictures
 
 ## [3.0.3] - 2024-02-09
