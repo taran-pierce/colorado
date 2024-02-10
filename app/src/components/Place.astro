@@ -6,6 +6,7 @@ interface Props {
 interface Place {
   name: string,
   imageGalleryKey: string,
+  images: Array<string>,
 }
 
 interface Data {
@@ -25,9 +26,22 @@ const {
 <div class="place-wrapper">
   <h2>{name}</h2>
   <ul>
-    {places.map((place: Place) => (
-      <li>{place.name}</li>
-    ))}
+    {places.map((place: Place) => {
+      const { images } = place;
+      return (
+        <li class="place-item">
+          <h3>{place.name}</h3>
+          <p>{images?.length ? `${images.length} Photos!` : `None uploaded yet...`}</p>
+          {images && images.map((image, index) => {
+            return (
+              <img
+                src={image}
+                alt={`${place.name} ${index}`}
+              />
+            )
+          })}
+        </li>
+      )})}
   </ul>
 </div>
 
@@ -35,5 +49,15 @@ const {
   .place-wrapper {
     border: 1px solid black;
     padding: 1rem;
+    overflow: hidden;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  img {
+    display: block;
   }
 </style>
