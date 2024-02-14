@@ -1,7 +1,14 @@
 ---
+interface Props {
+  name: string,
+  tags: Array<string>,
+  imageData: Array<any>,
+}
+
 import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
+import Locations from '../../components/Locations.astro';
 
 export function getStaticPaths() {
   return places.map(({
@@ -25,7 +32,6 @@ const {
   tags,
 } = Astro.props;
 
-
 ---
 
 <Layout title={`Photos of ${name}`}>
@@ -33,15 +39,9 @@ const {
     <Container>
       <h1>Photos of {name}</h1>
       <p>Looks like there are {tags.length} to choose from...</p>
-      <ul>
-        {tags.map((tag) => {
-          return (
-            <li>
-              <a href={`/location/${tag}`}>{tag}</a>
-            </li>
-          )
-        })}
-      </ul>
+      {tags && (
+        <Locations tags={tags} />
+      )}
     </Container>
   </main>
 </Layout>

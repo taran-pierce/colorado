@@ -1,0 +1,23 @@
+---
+interface Props {
+  tag: string,
+}
+
+const {
+  tag,
+} = Astro.props;
+
+---
+
+<div class="location">
+  <h2>{tag}</h2>
+  <p>Need to fetch images with this tag now, looks like we have .</p>
+  <a class="button primary" href={`/location/${tag}`}>View</a>
+</div>
+
+<style>
+  .location {
+    border: 1px solid var(--color-black);
+    padding: var(--padding-main);
+  }
+</style>
