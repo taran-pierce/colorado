@@ -1,0 +1,44 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { places } from '../../utils/places';
+
+
+export function getStaticPaths() {
+  return places.map(({
+    name,
+    tags,
+  }) => {
+    const slug = name.toLowerCase();
+
+    return {
+      params: { slug },
+      props: {
+        name,
+        tags,
+      },
+    };
+  });
+}
+
+const {
+  name,
+  tags,
+} = Astro.props;
+
+---
+
+<Layout title={`Photos of ${name}`}>
+  <main>
+    <h1>Photos of {name}</h1>
+    <p>Looks like there are {tags.length} to choose from...</p>
+    <ul>
+      {tags.map((tag) => {
+        return (
+          <li>
+            <a href={`/location/${tag}`}>{tag}</a>
+          </li>
+        )
+      })}
+    </ul>
+  </main>
+</Layout>

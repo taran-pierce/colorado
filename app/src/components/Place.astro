@@ -1,17 +1,11 @@
 ---
 interface Props {
-	data: object;
+	data: Place;
 }
 
 interface Place {
   name: string,
-  imageGalleryKey: string,
-  images: Array<string>,
-}
-
-interface Data {
-  places: Array<Place>,
-  name: string,
+  tags: Array<string>,
 }
 
 const {
@@ -19,30 +13,18 @@ const {
 } = Astro.props;
 
 const {
-  places,
+  tags,
   name,
-} = data as Data;
+} = data;
+
+const pageLink = `/places/${name.toLowerCase()}`;
+
 ---
+
 <div class="place-wrapper">
   <h2>{name}</h2>
-  <ul>
-    {places.map((place: Place) => {
-      const { images } = place;
-      return (
-        <li class="place-item">
-          <h3>{place.name}</h3>
-          <p>{images?.length ? `${images.length} Photos!` : `None uploaded yet...`}</p>
-          {images && images.map((image, index) => {
-            return (
-              <img
-                src={image}
-                alt={`${place.name} ${index}`}
-              />
-            )
-          })}
-        </li>
-      )})}
-  </ul>
+  <p>Visited {tags.length} location{tags.length > 1 ? 's' : ''} here!</p>
+  <a href={pageLink}>View</a>
 </div>
 
 <style>

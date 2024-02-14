@@ -1,0 +1,37 @@
+---
+import { places } from '../../utils/places';
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  const tagsArray = [] as Array<string>;
+
+  places.forEach((place) => {    
+    place.tags.forEach((tag:string) => {
+      tagsArray.push(tag);
+    });
+  });
+
+  const pages = tagsArray.map((tag: string) => {
+    return {
+      params:  {
+        path: tag,
+      }
+    }
+  });
+  
+  return pages;
+}
+
+const {
+  path,
+} = Astro.params;
+
+const title = path.split('-').join(' ');
+const titleCase = title.charAt(0).toUpperCase() + title.slice(1);
+
+---
+
+<Layout title={titleCase}>
+  <h1>Photos of {titleCase}</h1>
+  <p>Coming soon!</p>
+</Layout>

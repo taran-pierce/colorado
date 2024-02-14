@@ -2,28 +2,24 @@
 import Place from './Place.astro';
 
 interface Props {
-	data: Array<Location>;
-}
-
-interface Location {
-  name: string,
-  places: Array<Place>,
+	data: Array<Place>;
 }
 
 interface Place {
   name: string,
-  imageGalleryKey: string,
-  images: Array<string>,
+  tags: Array<string>,
 }
 
 const {
   data,
 } = Astro.props;
+
 ---
+
 <div class="places-container">
-  {data.map((location: Location) => {
+  {data.map((place: Place) => {
     return (
-      <Place data={location} />
+      <Place data={place} />
     )
   })}
 </div>
