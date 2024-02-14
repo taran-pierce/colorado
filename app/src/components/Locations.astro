@@ -1,0 +1,26 @@
+---
+import Location from './Location.astro';
+
+interface Props {
+  tags: Array<string>,
+}
+
+const { tags } = Astro.props;
+
+---
+
+<div class="location-wrapper">
+  {tags.map((tag) => (
+    <Location tag={tag} />
+  ))}
+</div>
+
+<style>
+  .location-wrapper {
+    border: 1px solid var(--color-black);
+    display: grid;
+    gap: var(--padding-main);
+    grid-template-columns: 1fr;
+    padding: var(--padding-main);
+  }
+</style>

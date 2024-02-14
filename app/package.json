@@ -1,6 +1,6 @@
 {
   "name": "colorado",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "Site to share photos of Colorado and other places I visit",
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.2",
     "astro": "^4.3.5",
+    "astro-cloudinary-image": "^0.0.6",
     "cloudinary": "^2.0.1",
     "typescript": "^5.3.3"
   }

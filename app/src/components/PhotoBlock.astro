@@ -1,0 +1,19 @@
+---
+interface Props {
+  tag: string,
+}
+
+const { tag } = Astro.props;
+
+---
+
+<div class="block-wrapper">
+  <p>a block for {tag}!</p>
+</div>
+
+<style>
+  .block-wrapper {
+    border: 1px solid var(--color-black);
+    padding: var(--padding-main);
+  }
+</style>
