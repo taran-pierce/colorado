@@ -24,13 +24,13 @@ const pageLink = `/places/${name.toLowerCase()}`;
 <div class="place-wrapper">
   <h2>{name}</h2>
   <p>Visited {tags.length} location{tags.length > 1 ? 's' : ''} here!</p>
-  <a href={pageLink}>View</a>
+  <a href={pageLink} class="button primary">View</a>
 </div>
 
 <style>
   .place-wrapper {
-    border: 1px solid black;
-    padding: 1rem;
+    border: 1px solid var(--color-black);
+    padding: var(--padding-main);
     overflow: hidden;
   }
 

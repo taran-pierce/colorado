@@ -1,35 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Places from '../components/Places.astro';
+import Container from '../components/Container.astro';
 import { places } from '../utils/places';
 
 ---
 
 <Layout title="Welcome to my photos">
 	<main>
-		<h1>Welcome to my photos</h1>
-		<p>Just a place where I can show my photos to people that want to see them easier.</p>
-		<p>Plus I wanted to build something in Astro to see what it was like.</p>
-		<Places data={places} />
-		<p>Using Astro.build for the frontend of the site: <a href="https://astro.build/" target="_blank">Astro.build</a></p>
-		<p>Oh and I'm using <a href="https://www.facebook.com/Icons8" target="_blank">Icons8.com</a> for my icons!</p>
+		<Container>
+			<h1>Welcome to my photos</h1>
+			<p>Just a place where I can show my photos to people that want to see them easier.</p>
+			<p>Plus I wanted to build something in Astro to see what it was like.</p>
+			<Places data={places} />
+			<p>Using Astro.build for the frontend of the site: <a href="https://astro.build/" target="_blank">Astro.build</a></p>
+			<p>Oh and I'm using <a href="https://www.facebook.com/Icons8" target="_blank">Icons8.com</a> for my icons!</p>	
+		</Container>
 	</main>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-</style>

@@ -24,41 +24,87 @@ const { title } = Astro.props;
 
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
 		--color-white: #fff;
-		--color-black: #333;
+		--color-black: #444;
+		--color-primary: #2C423F;
+		--color-secondary: #4C5B61;
+		--color-tertiary: #829191;
+		--color-tertiary-light: lighten(var(--color-tertiary), 20%);
+		--color-grey: #949B96;
+		--color-grey-light: #C5C5C5;
+		--color-main-text: var(--color-black);
+		--color-heading-text: var(--color-primary);
+		--padding-main: 1rem;
 	}
 
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
+		background: var(--color-primary);
 		padding: 0;
 		margin: 0;
+		font-size: 62.5%;
 	}
 
 	body {
 		background: url('/images/fresh-snow.png') top left repeat;
 		color: var(--color-black);
+		padding: 0;
+		margin: 0;
 	}
 
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	h1, h2, h3,
+	h4, h5, h6 {
+		color: var(--color-heading-text);
+		font-weight: bold;
+		margin-top: 0;
+	}
+
+	h1 {
+		font-size: 2.6rem;
+	}
+
+	h2 {
+		font-size: 2.4rem;
+	}
+
+	h3 {
+		font-size: 2.2rem;
+	}
+
+	h4 {
+		font-size: 2rem;
+	}
+
+	h5, h6 {
+		font-size: 1.8rem;
+	}
+
+	a, p, ul, li {
+		font-size: 1.8rem;
+	}
+
+	a {
+		color: var(--color-tertiary);
+
+		&:hover {
+			color: var(--color-tertiary-light);
+		}
+	}
+
+	.button {
+		display: inline-block;
+		padding: var(--padding-main) 4rem;
+		text-decoration: none;
+		transition: all .4s ease-in-out;
+
+		&.primary {
+			background-color: var(--color-primary);
+			color: var(--color-white);
+
+			&:hover {
+				background-color: var(--color-tertiary);
+				text-shadow: 0 2px 0 var(--color-black);
+			}
+		}
 	}
 </style>
