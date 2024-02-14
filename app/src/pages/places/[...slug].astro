@@ -1,7 +1,7 @@
 ---
-import Layout from '../../layouts/Layout.astro';
 import { places } from '../../utils/places';
-
+import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/Container.astro';
 
 export function getStaticPaths() {
   return places.map(({
@@ -25,20 +25,23 @@ const {
   tags,
 } = Astro.props;
 
+
 ---
 
 <Layout title={`Photos of ${name}`}>
   <main>
-    <h1>Photos of {name}</h1>
-    <p>Looks like there are {tags.length} to choose from...</p>
-    <ul>
-      {tags.map((tag) => {
-        return (
-          <li>
-            <a href={`/location/${tag}`}>{tag}</a>
-          </li>
-        )
-      })}
-    </ul>
+    <Container>
+      <h1>Photos of {name}</h1>
+      <p>Looks like there are {tags.length} to choose from...</p>
+      <ul>
+        {tags.map((tag) => {
+          return (
+            <li>
+              <a href={`/location/${tag}`}>{tag}</a>
+            </li>
+          )
+        })}
+      </ul>
+    </Container>
   </main>
 </Layout>

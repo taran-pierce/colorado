@@ -1,6 +1,7 @@
 ---
 import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
+import Container from '../../components/Container.astro';
 
 export function getStaticPaths() {
   const tagsArray = [] as Array<string>;
@@ -32,6 +33,10 @@ const titleCase = title.charAt(0).toUpperCase() + title.slice(1);
 ---
 
 <Layout title={titleCase}>
-  <h1>Photos of {titleCase}</h1>
-  <p>Coming soon!</p>
+  <main>
+    <Container>
+      <h1>Photos of {titleCase}</h1>
+      <p>Coming soon!</p>
+    </Container>
+  </main>
 </Layout>
