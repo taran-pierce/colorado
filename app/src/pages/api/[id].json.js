@@ -7,7 +7,7 @@ import { places } from '../../utils/places';
 
 // gets the transform URLs from cloudinary for each file from each location
 // uses "tag" in cloudinary and added to /utils/places.ts
-export const GET = async ({ params, request }) => {
+export const GET = async ({ params }) => {
   const id = params.id;
 
   const imageData = await getAssetsByTagName(id);

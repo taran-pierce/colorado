@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.0.11] - 2024-02-29
+### Updated 
+- Fix broken build
+  - Should really just add the requirement for a pull request and it would have caught it
+
 ## [3.0.10] - 2024-02-29
 ### Added 
 - Added api for getting url transforms from Cloudinary
