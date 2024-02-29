@@ -1,33 +1,25 @@
-// import { getTransformationUrls } from '../utils/useCloudinary';
-import {
-  useState,
-  useRef,
-  useEffect,
-} from 'react';
-
 import styles from './photoBlock.module.scss';
 
 const { env } = process;
 
-export default function PhotoBlock({
-  imageData = [],
-  titleCase = '',
-}) {
-  const [images, setImages] = useState(imageData);
-  
-  useEffect(() => {
-    setImages(imageData);
-  }, [imageData]);
+export default function PhotoBlock(props) {
+  const { imageData } = props;
 
-  const isDev = process.env.NODE_ENV === 'development';
+  const isDev = env.NODE_ENV === 'development';
+
+  if (imageData?.urls?.length === 0 || imageData === undefined) {
+    return <p>no image data...</p>
+  }
   
   return (
     <div className={styles.photoBlockWrapper}>
-      {images.map((image) => (
-        <img
-          src={isDev ? image.url : image.secure_url}
-          alt={image.folder}
-        />
+      {imageData && imageData?.urls?.map((image) => (
+        <div key={image}>
+          <img
+            src={image}
+            alt={image}
+          />
+        </div>
       ))}
     </div>
   )

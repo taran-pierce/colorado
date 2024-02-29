@@ -9,6 +9,8 @@ declare global {
 	}
 }
 
+import Footer from '../components/Footer.astro';
+
 const {
 	title,
 } = Astro.props;
@@ -37,6 +39,7 @@ const {
 			gtag('config', 'G-90YT2BSV8N');
 		</script>
 		<slot />
+    <Footer />
 	</body>
 </html>
 

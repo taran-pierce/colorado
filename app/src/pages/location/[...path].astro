@@ -3,7 +3,6 @@ import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
 import BreadCrumbs from '../../components/BreadCrumbs.astro';
-import { getAssetsByTagName } from '../../utils/useCloudinary';
 import PhotoBlock from '../../components/PhotoBlock.jsx';
 
 export function getStaticPaths() {
@@ -33,7 +32,13 @@ const {
 const title = path.split('-').join(' ');
 const titleCase = title.charAt(0).toUpperCase() + title.slice(1);
 
-const imageData = await getAssetsByTagName(path);
+// api to get the URL transforms from Cloudinary
+// path in the URL after /location/ needs to match a "tag" in Cloudinary
+const response = await fetch(`http://localhost:4321/api/${path}.json`, {
+  method: 'GET',
+});
+
+const data = await response.json();
 
 ---
 
@@ -41,22 +46,22 @@ const imageData = await getAssetsByTagName(path);
   <main>
     <Container>
       <h1>Photos of {titleCase}</h1>
-      <BreadCrumbs previousPages={
-        [
-          {
-            name: 'home',
-            path: '/',
-          },
-          {
-            name: 'places',
-            path: '/places',
-          },
-        ]}
+      <BreadCrumbs
+        previousPages={
+          [
+            {
+              name: 'home',
+              path: '/',
+            },
+            {
+              name: 'places',
+              path: '/places',
+            },
+          ]
+        }
       />
-      <p>Looks like we got {imageData?.length} photos here!</p>
-      {imageData && (
-        <PhotoBlock imageData={imageData} />
-      )}
+      <p>Looks like we got {data?.length} photos here!</p>
+      <PhotoBlock imageData={data} />
     </Container>
   </main>
 </Layout>

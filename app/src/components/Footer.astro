@@ -1,0 +1,52 @@
+---
+import Container from "./Container.astro";
+
+---
+<script>
+  const date = new Date();
+  const year = date.getFullYear();
+  const element = document.getElementById('year');
+
+  element.innerHTML = year;
+</script>
+
+<footer>
+  <Container>
+    <div class="item-wrapper">
+      <div>
+        <p>Copyright © <span id="year"></span></p>
+      </div>
+      <div>
+        <p>
+          Icons by <a href="https://icons8.com/" target="_blank">Icons8.com</a>
+        </p>
+      </div>
+      <div>
+        <p>
+          <a href="https://astro.build/" target="_blank">Astro.build</a>
+        </p>
+      </div>
+    </div>
+  </Container>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  @media(min-width: 992px) {
+    footer {
+      .item-wrapper {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+
+        > div:nth-child(2) {
+          text-align: center;
+        }
+      }
+    }
+  }
+</style>

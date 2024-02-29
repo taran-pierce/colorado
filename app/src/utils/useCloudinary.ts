@@ -55,25 +55,38 @@ export async function getAssetsByTagName(tag: string) {
 // // grab url with transforms
 export async function getTransformationUrls(images: any) {
 	try {
+		const imageCount = images.length;
+
+		function isDivisibleBy3(number: any) {
+			return number % 3 === 0;
+	}
+
+	let imageHeight = 320;
+
+	if (isDivisibleBy3(imageCount)) {
+    imageHeight = 220;
+	}
+
 		// TODO set up more transforms here of course
-		const imageURLs = images.map((image:any) => {
+		const imageURLs = await images.map((image:any) => {
 			const imageURL = cloudinary.url(image.public_id, {
-				height: '60',
+				height: imageHeight,
 				// width: ,
 				client_hints: "true",
 				crop: "fit",
 				format: "webp",
 				sizes: "100vw",
 				quality: 70,
-				// TODO oh, I bet this is why
 				secure: import.meta.env.CLOUDINARY_SSL,
 			});
 
 			return imageURL;
-		}); 
+		});
 
-		return imageURLs;
-	} catch {
-    console.log('had a problem!');
+		const data = await imageURLs;
+
+		return data;
+	} catch (error) {
+    console.log('had a problem!', error);
 	}
 };
