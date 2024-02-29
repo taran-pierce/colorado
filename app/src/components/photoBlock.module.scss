@@ -1,0 +1,16 @@
+.photoBlockWrapper {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@media(min-width: 768px) {
+  .photoBlockWrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

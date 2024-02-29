@@ -1,6 +1,6 @@
 {
   "name": "colorado",
-  "version": "3.0.7",
+  "version": "3.0.8",
   "description": "Site to share photos of Colorado and other places I visit",
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "cloudinary": "^2.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sass": "^1.71.1",
     "typescript": "^5.3.3"
   }
 }

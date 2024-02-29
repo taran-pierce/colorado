@@ -5,36 +5,30 @@ import {
   useEffect,
 } from 'react';
 
+import styles from './photoBlock.module.scss';
+
+const { env } = process;
+
 export default function PhotoBlock({
   imageData = [],
   titleCase = '',
 }) {
-  const [images, setImages] = useState(undefined);
-
- useEffect(() => {
-  console.log('running');
-  getTransformationUrls(imageData).then((res) => {
-    console.log({
-      res,
-    });
+  const [images, setImages] = useState(imageData);
   
-    // setImages(res);
+  useEffect(() => {
+    setImages(imageData);
+  }, [imageData]);
 
-    // console.log({
-    //   images,
-    // });
-   });
- }, [imageData])
-
- console.log({
-  images,
- });
-
+  const isDev = process.env.NODE_ENV === 'development';
+  
   return (
-    <div className="photo-wrapper">
-      {/* {imageData && imageData.map((image, index) => (
-        <AdvancedImage cldImg={image.public_id} />
-      ))} */}
+    <div className={styles.photoBlockWrapper}>
+      {images.map((image) => (
+        <img
+          src={isDev ? image.url : image.secure_url}
+          alt={image.folder}
+        />
+      ))}
     </div>
   )
 }

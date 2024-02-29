@@ -9,6 +9,7 @@ import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
 import Locations from '../../components/Locations.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export function getStaticPaths() {
   return places.map(({
@@ -38,6 +39,17 @@ const {
   <main>
     <Container>
       <h1>Photos of {name}</h1>
+      <BreadCrumbs previousPages={[
+        {
+          name: "home",
+          path: '/'
+        }, 
+        {
+          name: "places",
+          path: '/places',
+        }
+        ]}
+      />
       <p>Looks like there are {tags.length} to choose from...</p>
       {tags && (
         <Locations tags={tags} />
