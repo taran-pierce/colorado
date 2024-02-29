@@ -1,13 +1,15 @@
 import { v2 as cloudinary } from 'cloudinary';
 
-cloudinary.config({
+const cloudinaryConfig = {
 	cloud_name: import.meta.env.CLOUDINARY_CLOUD_NAME,
 	api_key: import.meta.env.CLOUDINARY_API_KEY,
 	api_secret: import.meta.env.CLOUDINARY_SECRET,
 	// TODO Azure preview envs are still using the "dev" value here
-	secure: import.meta.env.CLOUDINARY_SSL,
+	// secure: import.meta.env.CLOUDINARY_SSL,
 	// ssl_detected: true,
-});
+};
+
+cloudinary.config(cloudinaryConfig);
 
 // grab all the images by tag name and get transform URLs
 // doesnt include transformations though

@@ -3,7 +3,7 @@ import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
 import { getAssetsByTagName } from '../../utils/useCloudinary';
-import { Cloudinary } from 'astro-cloudinary-image';
+import PhotoBlock from '../../components/PhotoBlock.jsx';
 
 export function getStaticPaths() {
   const tagsArray = [] as Array<string>;
@@ -32,7 +32,7 @@ const {
 const title = path.split('-').join(' ');
 const titleCase = title.charAt(0).toUpperCase() + title.slice(1);
 
-const imageData = await getAssetsByTagName(path);
+// const imageData = await getAssetsByTagName(path);
 
 ---
 
@@ -40,19 +40,8 @@ const imageData = await getAssetsByTagName(path);
   <main>
     <Container>
       <h1>Photos of {titleCase}</h1>
-      <p>Looks like we got {imageData?.length} photos here!</p>
-      <div class="photo-wrapper">
-        {imageData && imageData.map((image, index) => {  
-          return (
-            <Cloudinary 
-              width="500"
-              alt={`${titleCase}-${index}`}
-              src={image?.public_id}
-              errorImage="NotFound.svg"
-            />
-          )
-        })}
-      </div>
+      <!-- <p>Looks like we got {imageData?.length} photos here!</p> -->
+      <!-- <PhotoBlock imageData={imageData} titleCase={titleCase} client:only="react" /> -->
     </Container>
   </main>
 </Layout>
