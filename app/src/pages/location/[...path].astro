@@ -34,7 +34,7 @@ const titleCase = title.charAt(0).toUpperCase() + title.slice(1);
 
 // api to get the URL transforms from Cloudinary
 // path in the URL after /location/ needs to match a "tag" in Cloudinary
-const response = await fetch(`http://localhost:4321/api/${path}.json`, {
+const response = await fetch(`${process.env.API_URL}/api/${path}.json`, {
   method: 'GET',
 });
 
