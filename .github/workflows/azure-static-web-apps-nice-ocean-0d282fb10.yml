@@ -14,6 +14,7 @@ env:
   CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
   CLOUDINARY_SECRET: ${{ secrets.CLOUDINARY_SECRET }}
   CLOUDINARY_URL: ${{ secrets.CLOUDINARY_URL }}
+  API_URL: ${{ secrets.API_URL }}
 
 jobs:
   build_and_deploy_job:
