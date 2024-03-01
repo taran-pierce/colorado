@@ -1,10 +1,12 @@
 ---
-
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
 import BreadCrumbs from '../../components/BreadCrumbs.astro';
 import PhotoBlock from '../../components/PhotoBlock.jsx';
+
+import Carousel from '../../components/Carousel.jsx';
 
 export function getStaticPaths() {
   const tagsArray = [] as Array<string>;
@@ -66,6 +68,7 @@ const placePath = `/places/${place.toLowerCase().split(' ').join()}`;
 ---
 
 <Layout title={titleCase}>
+  <ViewTransitions />
   <main>
     <Container>
       <h1>{titleCase}</h1>
@@ -90,8 +93,9 @@ const placePath = `/places/${place.toLowerCase().split(' ').join()}`;
       <p>Looks like we got {data?.length} photos here!</p>
       <p>The main part of this page is still using Astro but the section below where the photos are displayed is actually using React.</p>
       <p>Which is pretty slick to have the React library stuffed right inside the Astro framework all in the same project.</p>
-      <p>It could help you bridge the gap while trying to migrate from one tech stack to another. Giving you the ability to still use your legacy components right inside the new stack. There are certain limiations though it seems, at least with my limited use with it so far. The hooks do not work as well or in some isntances, do not work at.</p>
-      <PhotoBlock imageData={data} />
+      <p>It could help you bridge the gap while trying to migrate from one tech stack to another. Giving you the ability to still use your legacy components right inside the new stack. There are certain limiations though it seems, at least with my limited use with it so far. <s>The hooks do not work as well or in some instances, do not work at.</s> The trick is that you have to have the framework component be a direct child of the main Astro page.</p>
+      <p>There you will get access to hooks you import but even though you can import other framework components into those and they work, they are not capable of importing and accessing hooks at that level.</p>
+      <Carousel client:load="react" imageData={data} />
     </Container>
   </main>
 </Layout>

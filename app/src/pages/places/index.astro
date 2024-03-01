@@ -1,4 +1,6 @@
 ---
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
+
 import Layout from '../../layouts/Layout.astro';
 import Places from '../../components/Places.astro';
 import Container from '../../components/Container.astro';
@@ -8,6 +10,7 @@ import { places } from '../../utils/places';
 ---
 
 <Layout title="Places | Photos by Taran Pierce">
+  <ViewTransitions />
 	<main>
 		<Container>
 			<h1>Welcome to my photos</h1>

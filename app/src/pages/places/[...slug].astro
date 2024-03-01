@@ -5,6 +5,7 @@ interface Props {
   imageData: Array<any>,
 }
 
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
 import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
@@ -36,6 +37,7 @@ const {
 ---
 
 <Layout title={`Photos of ${name}`}>
+  <ViewTransitions />
   <main>
     <Container>
       <h1>Photos of {name}</h1>
