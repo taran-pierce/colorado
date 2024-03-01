@@ -15,6 +15,6 @@ export const places = [
 	},
 	{
 		name: 'Massachusetts',
-		tags: ['mass']
+		tags: ['massachusetts']
 	},
 ];

@@ -56,6 +56,7 @@ const {
 		--color-main-text: var(--color-black);
 		--color-heading-text: var(--color-primary);
 		--padding-main: 1rem;
+		--padding-large: 2rem;
 	}
 
 	html {
@@ -126,6 +127,18 @@ const {
 				background-color: var(--color-tertiary);
 				text-shadow: 0 2px 0 var(--color-black);
 			}
+		}
+	}
+
+	@keyframes placeContainer {
+		0% {
+			opacity: 0;
+      transform: rotate3d(0, 2, 2, 180deg);
+		}
+
+		100% {
+			opacity: 1;
+			transform: rotate3d(0, 2, 2, 0deg);
 		}
 	}
 </style>

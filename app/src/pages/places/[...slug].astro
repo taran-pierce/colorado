@@ -39,15 +39,20 @@ const {
   <main>
     <Container>
       <h1>Photos of {name}</h1>
-      <BreadCrumbs previousPages={[
-        {
-          name: "home",
-          path: '/'
-        }, 
-        {
-          name: "places",
-          path: '/places',
-        }
+      <BreadCrumbs previousPages={
+        [
+          {
+            name: "home",
+            path: '/'
+          }, 
+          {
+            name: "places",
+            path: '/places',
+          },
+          {
+            name: name,
+            path: `/places/${name.toLowerCase()}`
+          }
         ]}
       />
       <p>Looks like there are {tags.length} to choose from...</p>

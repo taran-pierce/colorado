@@ -2,19 +2,30 @@
 import Layout from '../../layouts/Layout.astro';
 import Places from '../../components/Places.astro';
 import Container from '../../components/Container.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
 import { places } from '../../utils/places';
 
 ---
 
-<Layout title="Welcome to my photos">
+<Layout title="Places | Photos by Taran Pierce">
 	<main>
 		<Container>
 			<h1>Welcome to my photos</h1>
-			<p>Just a place where I can show my photos to people that want to see them easier.</p>
-			<p>Plus I wanted to build something in Astro to see what it was like.</p>
+			<BreadCrumbs
+        previousPages={
+          [
+            {
+              name: 'home',
+              path: '/',
+            },
+            {
+              name: 'places',
+              path: '/places',
+            },
+          ]
+        }
+      />
 			<Places data={places} />
-			<p>Using Astro.build for the frontend of the site: <a href="https://astro.build/" target="_blank">Astro.build</a></p>
-			<p>Oh and I'm using <a href="https://icons8.com/" target="_blank">Icons8.com</a> for my icons!</p>	
 		</Container>
 	</main>
 </Layout>
