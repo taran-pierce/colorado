@@ -1,16 +1,32 @@
 .photoBlockWrapper {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr;
-
+  gap: var(--padding-large);
+  grid-template-columns: 1fr;
+  
   img {
+    border: 1px solid var(--color-secondary);
     max-width: 100%;
     display: block;
+    box-shadow: 2px 2px 4px rgba(0,0,0,.5);
+    transition: .7s all ease-in-out;
+    transform-origin: center;
+
+    &:hover {
+      border-width: 2px;
+      transform: scale(1.2);
+      box-shadow: 4px 4px 6px rgba(0,0,0,.5);
+    }
   }
 }
 
 @media(min-width: 768px) {
   .photoBlockWrapper {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(min-width: 992px) {
+  .photoBlockWrapper {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

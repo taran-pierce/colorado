@@ -64,7 +64,7 @@ export async function getTransformationUrls(images: any) {
 	let imageHeight = 320;
 
 	if (isDivisibleBy3(imageCount)) {
-    imageHeight = 220;
+    imageHeight = 320;
 	}
 
 		// TODO set up more transforms here of course

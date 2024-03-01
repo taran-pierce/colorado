@@ -7,14 +7,19 @@ export default function PhotoBlock(props) {
     return <p>no image data...</p>
   }
   
+  // TODO need to make it where I can link to better photos
+  // either need more transform URLs or run that function again with different
+  // options for the "light box" or full size photo
   return (
     <div className={styles.photoBlockWrapper}>
       {imageData && imageData?.urls?.map((image) => (
         <div key={image}>
-          <img
-            src={image}
-            alt={image}
-          />
+          <a href={image}>
+            <img
+              src={image}
+              alt={image}
+            />
+          </a>
         </div>
       ))}
     </div>

@@ -1,4 +1,5 @@
 ---
+
 import { places } from '../../utils/places';
 import Layout from '../../layouts/Layout.astro';
 import Container from '../../components/Container.astro';
@@ -8,16 +9,31 @@ import PhotoBlock from '../../components/PhotoBlock.jsx';
 export function getStaticPaths() {
   const tagsArray = [] as Array<string>;
 
+  // loop through places and grab all the image "tag"s
   places.forEach((place) => {    
     place.tags.forEach((tag:string) => {
       tagsArray.push(tag);
     });
   });
 
+  // create a pages object for Astro to loop through to create the
+  // static paths it needs
+  // each path it creates will be a "tag" to go fetch the photos
   const pages = tagsArray.map((tag: string) => {
+    // in order to make better "breadcrumbs" we also want to
+    // get the current location "name" to display
+    const currentPlace : any = places.filter((place) => place.tags.includes(tag))[0];
+    const { name } = currentPlace;
+
+    // each "page" is an object and must have "params"
+    // which requires the id used when creating the folder: e.g. [...path]
+    // can also pass it "props" for additional data
     return {
       params:  {
         path: tag,
+      },
+      props: {
+        place: name,
       }
     }
   });
@@ -29,23 +45,30 @@ const {
   path,
 } = Astro.params;
 
-const title = path.split('-').join(' ');
+const {
+  place,
+} = Astro.props;
+
+const title = `${path.split('-').join(' ')}, ${place}`;
 const titleCase = title.charAt(0).toUpperCase() + title.slice(1);
 
 // api to get the URL transforms from Cloudinary
 // path in the URL after /location/ needs to match a "tag" in Cloudinary
-const response = await fetch(`http://photos.taranpierce.com/api/${path}.json`, {
+const response = await fetch(`https://photos.taranpierce.com/api/${path}.json`, {
   method: 'GET',
 });
 
 const data = await response.json();
+
+// HREF for breadcrumbs
+const placePath = `/places/${place.toLowerCase().split(' ').join()}`;
 
 ---
 
 <Layout title={titleCase}>
   <main>
     <Container>
-      <h1>Photos of {titleCase}</h1>
+      <h1>{titleCase}</h1>
       <BreadCrumbs
         previousPages={
           [
@@ -58,13 +81,16 @@ const data = await response.json();
               path: '/places',
             },
             {
-              name: path,
-              path: '/'
+              name: place,
+              path: placePath,
             }
           ]
         }
       />
       <p>Looks like we got {data?.length} photos here!</p>
+      <p>The main part of this page is still using Astro but the section below where the photos are displayed is actually using React.</p>
+      <p>Which is pretty slick to have the React library stuffed right inside the Astro framework all in the same project.</p>
+      <p>It could help you bridge the gap while trying to migrate from one tech stack to another. Giving you the ability to still use your legacy components right inside the new stack. There are certain limiations though it seems, at least with my limited use with it so far. The hooks do not work as well or in some isntances, do not work at.</p>
       <PhotoBlock imageData={data} />
     </Container>
   </main>
